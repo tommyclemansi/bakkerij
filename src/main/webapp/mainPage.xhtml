@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" version="2.0"
+          xmlns:rich="http://richfaces.org/rich">
+    <jsp:directive.page language="java"
+        contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" />
+    <jsp:text>
+        <![CDATA[ <?xml version="1.0" encoding="ISO-8859-1" ?> ]]>
+    </jsp:text>
+    <jsp:text>
+        <![CDATA[ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> ]]>
+    </jsp:text>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Tom's JSF page</title>
+</head>
+<body>
+<f:view>
+
+
+
+	<rich:tab header="header of the tab" name="tabname"></rich:tab>
+	<rich:popupPanel></rich:popupPanel>
+
+
+<h:inputText title="myTitleInputText" value="#{mainPage.name}">
+<f:validateLength>20</f:validateLength>
+</h:inputText>
+<h:inputText title="myTitleInputText2" value="${mainPage.name}">
+<f:validateLength>20</f:validateLength>
+</h:inputText>
+<!--  <h:inputText title="myTitleInputText" value="testvalue" id="il"></h:inputText>-->	
+<h:outputLabel value="tomsoutputlabel" id="ol"></h:outputLabel>
+<!-- here I'm making use of EL, so test will only be diesplayed if not empty -->
+<h:outputText value="test" rendered="#{not empty mainPage.id}"/>
+</f:view>
+</body>
+</html>
+</jsp:root>

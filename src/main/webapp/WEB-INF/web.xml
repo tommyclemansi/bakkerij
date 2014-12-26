@@ -6,4 +6,17 @@
   <param-name>javax.faces.CONFIG_FILES</param-name>
   <param-value>/faces-config.xml</param-value>
  </context-param>
+ <!--  entry required for faces Servlet:  -->
+ <servlet>
+  <servlet-name>FacesServlet</servlet-name>
+  <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+ </servlet>
+ <!-- every xhtml page will go through the FacesServlet -->
+ <servlet-mapping>
+  <servlet-name>FacesServlet</servlet-name>
+  <url-pattern>*.xhtml</url-pattern>
+ </servlet-mapping>
+ <welcome-file-list>
+  <welcome-file>mainPage.xhtml</welcome-file>
+ </welcome-file-list>
 </web-app>
