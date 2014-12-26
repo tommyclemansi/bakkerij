@@ -35,4 +35,13 @@ public class testBusiness {
 	//fail("Not yet implemented"); // TODO
 	}
 
+	@Test
+	public final void test2() {
+		System.out.println("test run method being run , test pushing to Remote repo");
+		Assert.assertTrue(false);
+
+	//fail("Not yet implemented"); // TODO
+	}
+
+	
 }
