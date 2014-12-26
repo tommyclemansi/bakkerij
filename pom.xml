@@ -81,6 +81,7 @@
   </profiles>
   <build>
   	<plugins>
+  	    <!-- should be run when site goal is invoked -->
   		<plugin>
   			<groupId>org.codehaus.mojo</groupId>
   			<artifactId>findbugs-maven-plugin</artifactId>
