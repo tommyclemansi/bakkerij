@@ -10,30 +10,44 @@
 <body>
 <!--  span is to differentiate sections -->
 <!-- this page is created directly in html5, not generated -->
+<!-- in html5 use header, footer, section  -->
+<header>
 <span>Tom's POC tech&nbsp;Page</span><hr/>
 <h1>bakkerij</h1>
+</header>
+<section>
 <span>this is just a POC Webpage where I illustrate diff tech</span>
 <!-- start of paragraph -->
 <p> these are the different ones used:</p>
 <!-- headings should not be used to differentiate font types, this is for css -->
+</section>
+<section>
 <h3>Web/Presentation tier</h3>
 <!-- emphasis, don't use italic & bold  -->
 <h2><em>html5</em></h2>
-<h2>jsp</h2>
-<h2>servlet</h2>
-<h2>jsf</h2>
+<!-- unordered list -->
+<ul type="#">
+<li>jsp</li>
+<li>servlet</li>
+<li>jsf</li>
+</ul>
 <h3>Business tier</h3>
 <h2>EJB lite</h2>
 <h3>integration tier</h3>
 <h2>Mongo DB</h2>
 <h3>development</h3>
-<h2>hudson</h2>
-<h2>eclipse</h2>
-<h2>Maven3</h2>
+<!-- ordered list using letters (type) -->
+<ol type="a">
+<li>hudson</li>
+<li>eclipse</li>
+<li>Maven3</li>
+</ol>
 <blockquote>
 my blockquote, this is an old tag
 <blockquote>yet another one</blockquote>
 </blockquote>
+</section>
+<footer>
 <!-- address might be scanned by robots  -->
 <address>
 http://bakkerij-tcleyman.rhcloud.com
@@ -41,5 +55,6 @@ http://bakkerij-tcleyman.rhcloud.com
 &copy; Copyright: tcleyman 
 <br/>
 &trade; Trademark: tcleyman
+</footer>
 </body>
 </html>
