@@ -7,6 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -22,6 +23,7 @@ import cdiDAO.SoortDAOI;
 /*
  * I'll expose my SLSB as a WS just as testing purposes
  * I might use this to insert soorten through a WS call
+ * https://forums.openshift.com/cannot-obtain-endpoint-creating-webservice
  * 
  */
 @WebService
@@ -36,6 +38,12 @@ public class SoortService {
   	public void initialize()
   	{
   		logger.log(Level.INFO, "PostConstruct - initialize invoked");
+  	}
+  
+	@PreDestroy
+  	public void cleanup()
+  	{
+  		logger.log(Level.INFO, "PreDestroy - cleanup invoked");
   	}
   	
   	/*
