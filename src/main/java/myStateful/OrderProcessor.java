@@ -3,9 +3,13 @@
  *******************************************************************************/
 package myStateful;
 
+import java.util.List;
+
 import javax.ejb.LocalBean;
 import javax.ejb.Stateful;
 import javax.ejb.Remove;
+
+import myentities.Taart;
 
 /**
  * Session Bean implementation class OrderProcessor
@@ -16,6 +20,8 @@ import javax.ejb.Remove;
 @Stateful
 @LocalBean
 public class OrderProcessor {
+	
+	private List<Taart> orderedTaartjes;
 
     /**
      * Default constructor. 

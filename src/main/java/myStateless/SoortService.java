@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.jws.WebService;
 
 import myentities.Soort;
 import cdiDAO.SoortDAOI;
@@ -15,6 +16,13 @@ import cdiDAO.SoortDAOI;
 /**
  * Session Bean implementation class SoortService
  */
+
+/*
+ * I'll expose my SLSB as a WS just as testing purposes
+ * I might use this to insert soorten through a WS call
+ * 
+ */
+@WebService
 @Stateless
 @LocalBean
 public class SoortService {
