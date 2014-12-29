@@ -1,11 +1,15 @@
 package mySingleton;
 
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.ejb.AccessTimeout;
 import javax.ejb.LocalBean;
+import javax.ejb.Lock;
+import javax.ejb.LockType;
 import javax.ejb.Schedule;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
@@ -59,4 +63,27 @@ public class MyStaticPage implements MyStaticPageI {
 		logger.log(Level.INFO, "scheduled method loadsomeContent invoked");
 	}
 
+	/*
+	 * container managed synchronization is the default
+	 * Only 1 Thread may access accesssomecontent at a time
+	 * 
+	 * Write is default
+	 * we can specify a maximum of time other clients can wait 
+	 * they receive AccessTimeoutException
+	 */
+	@AccessTimeout(value=1,unit=TimeUnit.MINUTES)
+	public void accesssomeContent()
+	{
+		logger.log(Level.INFO, "scheduled method loadsomeContent invoked");
+	}
+	
+	/*
+	 * overrides the default WRITE Lock
+	 */
+	@Lock(LockType.READ)
+	public void accesssomeotherContent()
+	{
+		logger.log(Level.INFO, "scheduled method loadsomeContent invoked");
+	}
+	
 }
