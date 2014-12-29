@@ -9,15 +9,14 @@ import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import myentities.Soort;
+
 import myentities.Taart;
 
 /*
  * not implemented yet
  */
 
-@Named("ItemDAO")
-public class TaartDAO {
+public class TaartDAO implements TaartDAOI {
 	
 private Logger logger = Logger.getLogger(this.getClass().getName());
 	

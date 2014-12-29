@@ -10,7 +10,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import myentities.Soort;
-import cdiDAO.SoortDAO;
+import cdiDAO.SoortDAOI;
 
 /**
  * Session Bean implementation class SoortService
@@ -22,8 +22,15 @@ public class SoortService {
   	private Logger logger = Logger.getLogger(this.getClass().getName());
 
 	
+  	/*
+  	 * Here I Inject a non managed DAO 
+  	 * SoortDAOI is the interface
+  	 * 
+  	 * there is one SoortDAO implmentation in my project
+  	 * named: SoortDAO
+  	 */
 	 @Inject
-	 SoortDAO soortDAO;
+	 SoortDAOI soortDAO;
 	
 	 /**
 	     * Default constructor. 

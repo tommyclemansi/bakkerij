@@ -7,7 +7,7 @@ import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
-import cdiDAO.TaartDAO;
+import cdiDAO.TaartDAOI;
 
 /**
  * Session Bean implementation class Taartjesservice
@@ -30,7 +30,7 @@ public class TaartService {
 	 */
 	
 	@Inject
-	TaartDAO taartDAO;
+	TaartDAOI taartDAO;
 	
     public TaartService() {
         // TODO Auto-generated constructor stub

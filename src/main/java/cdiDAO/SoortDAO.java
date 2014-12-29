@@ -16,9 +16,7 @@ import myentities.Soort;
  * this class will be used to to persistence with Soort Objects
  */
 
-@Named("SoortDAO")
-@Dependent
-public class SoortDAO {
+public class SoortDAO implements SoortDAOI {
 
 	/*
 	 * private Logger for SoortDAO
@@ -32,24 +30,40 @@ public class SoortDAO {
 		// TODO Auto-generated constructor stub
 	}
 	
+	/* (non-Javadoc)
+	 * @see cdiDAO.SoortDAOI#addSoort(myentities.Soort)
+	 */
+	@Override
 	public void addSoort (Soort soort)
 	{
 		logger.log(java.util.logging.Level.INFO, "addSoort");
 		em.persist(soort);
 	}
 
+	/* (non-Javadoc)
+	 * @see cdiDAO.SoortDAOI#deleteSoort(myentities.Soort)
+	 */
+	@Override
 	public void deleteSoort (Soort soort)
 	{
 		logger.log(java.util.logging.Level.INFO, "deleteSoort");
 		em.remove(soort);
 	}	
 	
+	/* (non-Javadoc)
+	 * @see cdiDAO.SoortDAOI#updateSoort(myentities.Soort)
+	 */
+	@Override
 	public void updateSoort (Soort soort)
 	{
 		logger.log(java.util.logging.Level.INFO, "updateSoort");
 		em.merge(soort);
 	}	
 	
+	/* (non-Javadoc)
+	 * @see cdiDAO.SoortDAOI#getSoort(int)
+	 */
+	@Override
 	public Soort getSoort(int id)
 	{
 		logger.log(java.util.logging.Level.INFO, "findSoort");
