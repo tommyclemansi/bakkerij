@@ -67,6 +67,8 @@ public class SoortService {
 	public void addSoort (Soort soort)
 	{
 		logger.log(java.util.logging.Level.INFO, "addSoort");
+		if (soortDAO == null)
+			System.out.println("soortDAO is null sorry.. ");
    	    soortDAO.addSoort(soort);
 	}
 	
