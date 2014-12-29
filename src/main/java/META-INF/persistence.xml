@@ -7,6 +7,7 @@
 		<class>myentities.Soort</class>
 		<properties>
 			<property name="eclipselink.target-server" value="None"/>
+			<property name="javax.persistence.jdbc.url" value="mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/"/>
 		</properties>
 	</persistence-unit>
 </persistence>
