@@ -20,7 +20,7 @@ public class TaartDAO implements TaartDAOI {
 	
 private Logger logger = Logger.getLogger(this.getClass().getName());
 	
-	@PersistenceContext
+	@PersistenceContext(unitName="bakkerij")
 	private EntityManager em;
 	
 	public TaartDAO() {
