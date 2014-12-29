@@ -1,3 +1,6 @@
+/*******************************************************************************
+ * Copyright (c) 2014 Tom Cleymans
+ *******************************************************************************/
 package myentities;
 
 import java.io.Serializable;
@@ -7,6 +10,9 @@ import static javax.persistence.GenerationType.SEQUENCE;
 /**
  * Entity implementation class for Entity: Soort
  *
+ * Een Taart kan vele Soorten hebben
+ * een Soort kan ook veel taarten hebben
+ * maar unidirectional ManyToMany from taart
  */
 @Entity
 @Table(name = "SOORT")
@@ -19,7 +25,8 @@ public class Soort implements Serializable {
     @Id
 	@GeneratedValue(strategy = SEQUENCE, generator = "SOORTSEQUENCE")
 	private int id;
-	private String soort;
+
+    private String soort;
 	
 	public int getId() {
 		return id;

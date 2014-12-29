@@ -1,7 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2014 Tom Cleymans
+ *******************************************************************************/
 package myStateless;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
+
+import cdiDAO.TaartDAO;
 
 /**
  * Session Bean implementation class Taartjesservice
@@ -11,7 +17,7 @@ import javax.ejb.Stateless;
  */
 @Stateless
 @LocalBean
-public class Taartjesservice {
+public class TaartService {
 
     /**
      * Default constructor. 
@@ -23,11 +29,14 @@ public class Taartjesservice {
 	 * TaartjeDAO
 	 */
 	
-    public Taartjesservice() {
+	@Inject
+	TaartDAO taartDAO;
+	
+    public TaartService() {
         // TODO Auto-generated constructor stub
     }
     
-    public void addTaartje(String naam)
+    public void addTaart(String naam)
     {
     System.out.println("addTaartje invoked");	
     }
