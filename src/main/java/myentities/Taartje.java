@@ -2,13 +2,14 @@ package myentities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import static javax.persistence.GenerationType.SEQUENCE;
 
 /**
  * Entity implementation class for Entity: Taartje
  *
  */
 @Entity
-
+@Table(name = "TAART")
 public class Taartje implements Serializable {
 
 	
@@ -18,10 +19,31 @@ public class Taartje implements Serializable {
 		super();
 	}
 	@Id
+	@GeneratedValue(strategy = SEQUENCE, generator = "TAARTJESEQUENCE")
+	@SequenceGenerator(name = "TAARTJESEQUENCE", allocationSize = 20)
 	private int id;
 	private String name;
+	
+	/*
+	 *  soort, this will be a many to many
+	 *  taartje kan tot meerdere soorten behoren (vb chocolade, fruit)
+	 *  en soorten kunnen tot meerdere taarten behoren 
+	 */
 	private String soort;
-
+	
+	/*
+	 * picture
+	 */
+	
+    @Lob
+	private Byte[] image;  
+	
+	public Byte[] getImage() {
+		return image;
+	}
+	public void setImage(Byte[] image) {
+		this.image = image;
+	}
 	public int getId() {
 		return id;
 	}

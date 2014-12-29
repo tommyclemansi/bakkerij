@@ -3,6 +3,7 @@
 	<persistence-unit name="bakkerij" transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>myentities.Taartje</class>
+		<class>myentities.Soort</class>
 		<properties>
 			<property name="eclipselink.target-server" value="None"/>
 		</properties>

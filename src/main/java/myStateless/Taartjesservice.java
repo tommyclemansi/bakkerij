@@ -16,6 +16,13 @@ public class Taartjesservice {
     /**
      * Default constructor. 
      */
+	
+	/*
+	 * To do insert a taartje DAO that will insert een Taartje 
+	 * @Inject
+	 * TaartjeDAO
+	 */
+	
     public Taartjesservice() {
         // TODO Auto-generated constructor stub
     }
