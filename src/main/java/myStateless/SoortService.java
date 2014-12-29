@@ -3,8 +3,10 @@
  *******************************************************************************/
 package myStateless;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -30,6 +32,12 @@ public class SoortService {
   	private Logger logger = Logger.getLogger(this.getClass().getName());
 
 	
+  	@PostConstruct
+  	public void initialize()
+  	{
+  		logger.log(Level.INFO, "PostConstruct - initialize invoked");
+  	}
+  	
   	/*
   	 * Here I Inject a non managed DAO 
   	 * SoortDAOI is the interface
