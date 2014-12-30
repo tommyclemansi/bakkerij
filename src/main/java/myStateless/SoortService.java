@@ -11,6 +11,7 @@ import javax.annotation.PreDestroy;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.interceptor.Interceptors;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
@@ -30,6 +31,7 @@ import cdiDAO.SoortDAOI;
 @WebService
 @Stateless
 @LocalBean
+@Interceptors(myInterceptor.MyLogger.class)
 public class SoortService {
 
   	private Logger logger = Logger.getLogger(this.getClass().getName());
