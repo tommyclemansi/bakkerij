@@ -35,12 +35,14 @@ public class SoortService {
   	private Logger logger = Logger.getLogger(this.getClass().getName());
 
 	
+  	@WebMethod(exclude=true)
   	@PostConstruct
   	public void initialize()
   	{
   		logger.log(Level.INFO, "PostConstruct - initialize invoked");
   	}
   
+  	@WebMethod(exclude=true)
 	@PreDestroy
   	public void cleanup()
   	{
