@@ -11,6 +11,7 @@ import javax.annotation.PreDestroy;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 import myentities.Soort;
@@ -60,16 +61,22 @@ public class SoortService {
 	     * Default constructor. 
 	     */
 		
+
     public SoortService() {
         // TODO Auto-generated constructor stub
     }
     
-	public void addSoort (Soort soort)
-	{
+    
+    /*
+     * changed to pass a string as soort has PK that is auto generated
+     */
+	public void addSoort (String soort)
+	{ Soort _soort  = new Soort();
+	  _soort.setSoort(soort);
 		logger.log(java.util.logging.Level.INFO, "addSoort");
 		if (soortDAO == null)
 			System.out.println("soortDAO is null sorry.. ");
-   	    soortDAO.addSoort(soort);
+   	    soortDAO.addSoort(_soort);
 	}
 	
 
