@@ -15,6 +15,7 @@ import javax.interceptor.Interceptors;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
+import myInterceptor.TomsLog;
 import myentities.Soort;
 import cdiDAO.SoortDAOI;
 
@@ -31,7 +32,8 @@ import cdiDAO.SoortDAOI;
 @WebService
 @Stateless
 @LocalBean
-@Interceptors(myInterceptor.MyLogger.class)
+//@Interceptors(myInterceptor.MyLogger.class)
+@TomsLog
 public class SoortService {
 
   	private Logger logger = Logger.getLogger(this.getClass().getName());

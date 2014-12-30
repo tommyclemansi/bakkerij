@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <beans xmlns="http://java.sun.com/xml/ns/javaee"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://jboss.org/schema/cdi/beans_1_0.xsd">
-<!-- removed due to WELD WELD-000069 An interceptor must have at least one binding, -->
-<!--   <interceptors>
+<!-- tried with EJB interceptor, but didn't work WELD WELD-000069 An interceptor must have at least one binding, -->
+  <interceptors>
   <class>myInterceptor.MyLogger</class>
- </interceptors>-->
+ </interceptors>
 </beans>

@@ -15,12 +15,15 @@ import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
 import javax.interceptor.Interceptors;
 
+import myInterceptor.TomsLog;
+
 /**
  * Session Bean implementation class MyAsyncService
  */
 @Stateless
 @LocalBean
-@Interceptors(myInterceptor.MyLogger.class)
+//@Interceptors(myInterceptor.MyLogger.class)
+@TomsLog
 public class MyAsyncService {
 
 	

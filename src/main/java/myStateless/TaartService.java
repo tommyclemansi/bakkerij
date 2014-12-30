@@ -8,6 +8,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.interceptor.Interceptors;
 
+import myInterceptor.TomsLog;
 import cdiDAO.TaartDAOI;
 
 /**
@@ -18,7 +19,8 @@ import cdiDAO.TaartDAOI;
  */
 @Stateless
 @LocalBean
-@Interceptors(myInterceptor.MyLogger.class)
+//@Interceptors(myInterceptor.MyLogger.class)
+@TomsLog
 public class TaartService {
 
     /**

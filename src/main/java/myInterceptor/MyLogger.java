@@ -10,6 +10,10 @@ import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
 
+/*
+ * switched to CDI interceptor due to WELD Exception
+ */
+@TomsLog
 @Interceptor
 /**
  * @author tcleyman
@@ -35,6 +39,7 @@ public class MyLogger {
 	 * idea is that I replace my logging with this one
 	 * hit into: WELD-000069 An interceptor must have at least one binding, but myInterceptor.MyLogger has none
 	 */
+	
 	@AroundInvoke
 	public Object aroundInvoke(InvocationContext ic) throws Exception {
 		System.out.println("myLogging interceptor: " + "class: " + ic.getClass().getName() +" method: " + ic.getMethod().getName() + " target: " + ic.getTarget().getClass().getName());
