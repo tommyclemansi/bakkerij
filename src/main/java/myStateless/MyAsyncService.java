@@ -13,12 +13,14 @@ import javax.ejb.Asynchronous;
 import javax.ejb.LocalBean;
 import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
+import javax.interceptor.Interceptors;
 
 /**
  * Session Bean implementation class MyAsyncService
  */
 @Stateless
 @LocalBean
+@Interceptors(myInterceptor.MyLogger.class)
 public class MyAsyncService {
 
 	
