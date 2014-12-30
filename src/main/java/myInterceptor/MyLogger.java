@@ -13,12 +13,12 @@ import javax.interceptor.InvocationContext;
 /*
  * switched to CDI interceptor due to WELD Exception
  */
-@TomsLog
-@Interceptor
 /**
  * @author tcleyman
  *
  */
+@TomsLog
+@Interceptor
 public class MyLogger {
 
 	private Logger logger = Logger.getLogger(this.getClass().getName());
