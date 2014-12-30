@@ -31,7 +31,7 @@ public class MyLogger {
 	 */
 	@AroundInvoke
 	public Object aroundInvoke(InvocationContext ic) throws Exception {
-		System.out.println("interceptor " + ic.getClass() + ic.getMethod());
+		System.out.println("myLogging interceptor: " + "class: " + ic.getClass().getName() +" method: " + ic.getMethod().getName() + " target: " + ic.getTarget().getClass().getName());
 		return ic.proceed();
    }
 
