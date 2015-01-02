@@ -3,7 +3,7 @@
 		<persistence-unit name="primary">
 		<description>bakkerij PU, this should be the correct place to specify persistence xml file</description>
 		<!--  <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>-->
-		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<!--  <provider>org.hibernate.ejb.HibernatePersistence</provider>-->
 		<jta-data-source>java:jboss/datasources/MySQLDS</jta-data-source>
 		<!--  <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>-->
 		<class>myentities.Taart</class>
