@@ -26,14 +26,20 @@ public class SoortDAO implements SoortDAOI {
 	 */
 	private Logger logger = Logger.getLogger(this.getClass().getName());
 	
+	// this does not work for some reason it states pu bakkerij not found 
 	/*@PersistenceContext(unitName="bakkerij")
 	private EntityManager em;*/
 	 
-	@PersistenceContext
-	private EntityManager em;
+	/*
+	 * JBAS011440: Can't find a persistence unit named null in deployment "ROOT.war"
+	 */
+	//@PersistenceContext
+	//private EntityManager em;
 	
-	/*@Inject
-	 private EntityManager em;*/
+	// this is what is in the kitchensink example
+	// basically they are using a Resources class and then inject the 
+	@Inject
+	private EntityManager em;
 	
 	public SoortDAO() {
 		// TODO Auto-generated constructor stub
