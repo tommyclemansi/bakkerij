@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 
 import javax.ejb.Stateless;
 import javax.enterprise.context.Dependent;
+import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -25,8 +26,10 @@ public class SoortDAO implements SoortDAOI {
 	 */
 	private Logger logger = Logger.getLogger(this.getClass().getName());
 	
-	@PersistenceContext(unitName="bakkerij")
-	private EntityManager em;
+	/*@PersistenceContext(unitName="bakkerij")
+	private EntityManager em;*/
+	 @Inject
+	 private EntityManager em;
 	
 	public SoortDAO() {
 		// TODO Auto-generated constructor stub
