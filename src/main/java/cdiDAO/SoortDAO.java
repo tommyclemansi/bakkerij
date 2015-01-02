@@ -28,8 +28,12 @@ public class SoortDAO implements SoortDAOI {
 	
 	/*@PersistenceContext(unitName="bakkerij")
 	private EntityManager em;*/
-	 @Inject
-	 private EntityManager em;
+	 
+	@PersistenceContext
+	private EntityManager em;
+	
+	/*@Inject
+	 private EntityManager em;*/
 	
 	public SoortDAO() {
 		// TODO Auto-generated constructor stub
