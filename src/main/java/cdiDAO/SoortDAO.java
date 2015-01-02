@@ -18,7 +18,6 @@ import myentities.Soort;
  * this class will be used to to persistence with Soort Objects
  */
 
-@Stateless
 public class SoortDAO implements SoortDAOI {
 
 	/*

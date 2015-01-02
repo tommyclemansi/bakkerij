@@ -1,5 +1,9 @@
 package mycdi;
 
+/*
+ * https://github.com/openshift/kitchensink-example/blob/master/src/main/java/org/jboss/as/quickstarts/kitchensink/util/Resources.java
+ */
+
 
 import java.util.logging.Logger;
 import javax.enterprise.context.RequestScoped;
