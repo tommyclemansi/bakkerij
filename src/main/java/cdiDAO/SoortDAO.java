@@ -50,6 +50,7 @@ public class SoortDAO implements SoortDAOI {
 	@Override
 	public void addSoort (Soort soort)
 	{
+		System.out.println("in add soort - DAO part");
 		logger.log(java.util.logging.Level.INFO, "addSoort");
 		em.persist(soort);
 	}
