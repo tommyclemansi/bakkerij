@@ -1,50 +1,134 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>bakkerij</groupId>
-  <artifactId>bakkerij</artifactId>
-  <packaging>war</packaging> <!-- packaging element if you want choose ear  -->
-  <version>1.0</version>
-  <name>bakkerij</name>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
-    <myproperty>1</myproperty>
-    <!-- to use do ${myproperty} -->
-  </properties>
-  <dependencies>
-    <dependency>
-      <groupId>org.jboss.spec</groupId>
-      <artifactId>jboss-javaee-6.0</artifactId>
-      <version>1.0.0.Final</version>
-      <type>pom</type>
-      <scope>provided</scope>
-    </dependency>
-    <!--added mongodb dependency, done by tcleyman -->
-   <!--   <dependency>
-    	<groupId>org.mongodb</groupId>
-    	<artifactId>mongo-java-driver</artifactId>
-    	<version>2.9.1</version>
-    </dependency>-->
-   <dependency>
-   	<groupId>junit</groupId>
-   	<artifactId>junit</artifactId>
-   	<version>4.12</version>
-   	<scope>test</scope>
-   </dependency>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>bakkerij</groupId>
+	<artifactId>bakkerij</artifactId>
+	<packaging>war</packaging> <!-- packaging element if you want choose ear -->
+	<version>1.0</version>
+	<name>bakkerij</name>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<myproperty>1</myproperty>
+		<!-- to use do ${myproperty} -->
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.jboss.spec</groupId>
+			<artifactId>jboss-javaee-6.0</artifactId>
+			<version>1.0.0.Final</version>
+			<type>pom</type>
+			<scope>provided</scope>
+		</dependency>
+		<!--added mongodb dependency, done by tcleyman -->
+		<!-- <dependency> <groupId>org.mongodb</groupId> <artifactId>mongo-java-driver</artifactId> 
+			<version>2.9.1</version> </dependency> -->
    <dependency>
    	<groupId>org.codehaus.mojo</groupId>
    	<artifactId>findbugs-maven-plugin</artifactId>
    	<version>3.0.0</version>
    	<type>maven-plugin</type>
    </dependency>
+  
    <dependency>
-   	<groupId>org.jboss.arquillian.junit</groupId>
-   	<artifactId>arquillian-junit-core</artifactId>
-   	<version>1.1.5.Final</version>
+   	<groupId>org.jboss.bom</groupId>
+   	<artifactId>jboss-javaee-6.0-with-tools</artifactId>
+   	<version>1.0.7.Final</version>
+   	<type>pom</type>
    </dependency>
-  </dependencies>
+   <dependency>
+   	<groupId>javax.enterprise</groupId>
+   	<artifactId>cdi-api</artifactId>
+   	<version>1.2</version>
+   	<scope>provided</scope>
+   </dependency>
+   <dependency>
+   	<groupId>org.jboss.spec.javax.annotation</groupId>
+   	<artifactId>jboss-annotations-api_1.1_spec</artifactId>
+   	<version>1.0.1.Final</version>
+   	<scope>provided</scope>
+   </dependency>
+   <dependency>
+   	<groupId>org.hibernate.javax.persistence</groupId>
+   	<artifactId>hibernate-jpa-2.0-api</artifactId>
+   	<version>1.0.1.Final</version>
+   	<scope>provided</scope>
+   </dependency>
+   <dependency>
+   	<groupId>org.jboss.spec.javax.ejb</groupId>
+   	<artifactId>jboss-ejb-api_3.1_spec</artifactId>
+   	<version>1.0.2.Final</version>
+   	<scope>provided</scope>
+   </dependency>
+   
+   
+ <dependency>
+<groupId>org.hibernate</groupId>
+<artifactId>hibernate-validator</artifactId>
+<version>4.2.0.Final</version>
+<scope>provided</scope>
+<exclusions>
+<exclusion>
+<groupId>org.slf4j</groupId>
+<artifactId>slf4j-api</artifactId>
+</exclusion>
+</exclusions>
+</dependency>
+    <!-- Needed for running tests (you may also use TestNG) -->
+  
+<!-- Optional, but highly recommended -->
+<!-- Arquillian allows you to test enterprise code such as EJBs and
+Transactional(JTA) JPA from JUnit/TestNG -->
+<!--  <dependency>
+<groupId>org.jboss.arquillian.junit</groupId>
+<artifactId>arquillian-junit-container</artifactId>
+<scope>test</scope>
+</dependency>-->
+<!--  <dependency>
+<groupId>org.jboss.arquillian.protocol</groupId>
+<artifactId>arquillian-protocol-servlet</artifactId>
+<scope>test</scope>
+</dependency>-->
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+	</dependencies>
+  <build>
+  	<plugins>
+  	    <!-- should be run when site goal is invoked -->
+  		<plugin>
+  			<groupId>org.codehaus.mojo</groupId>
+  			<artifactId>findbugs-maven-plugin</artifactId>
+  			<version>3.0.0</version>
+  		</plugin>
+  		  <!-- same here, this can be used to find errors in coding  -->
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<artifactId>maven-pmd-plugin</artifactId>
+  			<version>3.3</version>
+  			<executions>
+  				<execution>
+  					<phase>site</phase>
+  					<goals>
+  						<goal>pmd</goal>
+  					</goals>
+  				</execution>
+  			</executions>
+  		</plugin>
+  		 <!-- The JBoss AS plugin deploys your war to a local JBoss AS container -->
+<!-- To use, run: mvn package jboss-as:deploy -->
+<plugin>
+<groupId>org.jboss.as.plugins</groupId>
+<artifactId>jboss-as-maven-plugin</artifactId>
+<version>7.1.0.Final</version>
+</plugin>
+  	</plugins>
+  </build>
+
   <profiles>
     <profile>
      <!-- When built in OpenShift the 'openshift' profile will be used when invoking mvn. -->
@@ -85,30 +169,7 @@
       </build>
     </profile>
   </profiles>
-  <build>
-  	<plugins>
-  	    <!-- should be run when site goal is invoked -->
-  		<plugin>
-  			<groupId>org.codehaus.mojo</groupId>
-  			<artifactId>findbugs-maven-plugin</artifactId>
-  			<version>3.0.0</version>
-  		</plugin>
-  		  <!-- same here, this can be used to find errors in coding  -->
-  		<plugin>
-  			<groupId>org.apache.maven.plugins</groupId>
-  			<artifactId>maven-pmd-plugin</artifactId>
-  			<version>3.3</version>
-  			<executions>
-  				<execution>
-  					<phase>site</phase>
-  					<goals>
-  						<goal>pmd</goal>
-  					</goals>
-  				</execution>
-  			</executions>
-  		</plugin>
-  	</plugins>
-  </build>
+
   <organization>
   	<name>tcleyman</name>
   </organization>
