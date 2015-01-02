@@ -1,10 +1,11 @@
 /*******************************************************************************
- * Copyright (c) 2014 Tom Cleymans
+ * Copyright (c) 2015 Tom Cleymans
  *******************************************************************************/
 package cdiDAO;
 
 import java.util.logging.Logger;
 
+import javax.ejb.Stateless;
 import javax.enterprise.context.Dependent;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
@@ -16,6 +17,7 @@ import myentities.Soort;
  * this class will be used to to persistence with Soort Objects
  */
 
+@Stateless
 public class SoortDAO implements SoortDAOI {
 
 	/*
