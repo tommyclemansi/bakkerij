@@ -27,11 +27,15 @@ import javax.persistence.PersistenceContext;
 * private EntityManager em;
 * </pre>
 */
+/*
+ * for some reason can't get it to work with a pu name
+ */
 public class Resources {
 // use @SuppressWarnings to tell IDE to ignore warnings about field not being referenced directly
 @SuppressWarnings("unused")
 @Produces
-@PersistenceContext(unitName = "primary")
+//@PersistenceContext(unitName = "primary")
+@PersistenceContext
 private EntityManager em;
 
 @Produces
