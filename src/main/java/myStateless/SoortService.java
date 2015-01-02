@@ -8,7 +8,9 @@ import java.util.logging.Logger;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.annotation.Resource;
 import javax.ejb.LocalBean;
+import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.interceptor.Interceptors;
@@ -38,7 +40,14 @@ public class SoortService {
 
   	private Logger logger = Logger.getLogger(this.getClass().getName());
 
-	
+  	
+  	/*
+  	 * SessionContext can be used for example to mark a method for rollback
+  	 */
+	@Resource
+	private SessionContext context;
+  	
+  	
   	@WebMethod(exclude=true)
   	@PostConstruct
   	public void initialize()

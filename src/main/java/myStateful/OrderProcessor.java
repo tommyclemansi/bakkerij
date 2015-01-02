@@ -3,15 +3,18 @@
  *******************************************************************************/
 package myStateful;
 
+import java.rmi.RemoteException;
 import java.util.List;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.ejb.EJBException;
 import javax.ejb.LocalBean;
 import javax.ejb.PostActivate;
 import javax.ejb.PrePassivate;
+import javax.ejb.SessionSynchronization;
 import javax.ejb.Stateful;
 import javax.ejb.Remove;
 
@@ -23,11 +26,14 @@ import myentities.Taart;
  * Session Bean implementation class OrderProcessor
  * 
  * This Stateful session bean is responsible for storing the order
- * This 
+ * 
+ * SessionSynchronization can be used on stateful EJBs
+ * this to get to know demarcation points
  */
 @Stateful
 @LocalBean
-public class OrderProcessor {
+public class OrderProcessor implements SessionSynchronization 
+{
 	
 	private Logger logger = Logger.getLogger(this.getClass().getName());
 	private List<Taart> orderedTaartjes;
@@ -73,5 +79,30 @@ public class OrderProcessor {
     {
     	
     }
+
+
+	@Override
+	public void afterBegin() throws EJBException//, RemoteException 
+	{
+		// TODO Auto-generated method stub
+	System.out.println("afterBegin called");	
+	}
+
+
+	@Override
+	public void afterCompletion(boolean arg0) throws EJBException//,RemoteException 
+	{
+		// TODO Auto-generated method stub
+		System.out.println("afterCompletion called");
+		
+	}
+
+
+	@Override
+	public void beforeCompletion() throws EJBException//, RemoteException 
+	{
+		// TODO Auto-generated method stub
+		System.out.println("beforeCompletion called");
+	}
 
 }
