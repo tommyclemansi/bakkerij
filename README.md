@@ -10,10 +10,14 @@ Technologies used:
 - push to cloud 
 
 Technologies used in Project
+- HTML 5
 - JSF
-- EJB 
+- EJB (Stateless,Stateful, Singleton)
+- CDI
+- JAX-WS
 - JPA
-- MongoDB
+- MYSQL
 
 Currently is in start phase 
- 
+
+writen by tcleyman
