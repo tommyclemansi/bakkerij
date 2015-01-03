@@ -3,7 +3,7 @@
  *******************************************************************************/
 package myStateful;
 
-import java.rmi.RemoteException;
+
 import java.util.List;
 import java.util.logging.Logger;
 import java.util.logging.Level;
@@ -18,7 +18,6 @@ import javax.ejb.SessionSynchronization;
 import javax.ejb.Stateful;
 import javax.ejb.Remove;
 
-import org.apache.tools.ant.types.LogLevel;
 
 import myentities.Taart;
 
