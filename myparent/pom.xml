@@ -21,13 +21,13 @@
    	<scope>provided</scope>
    </dependency>
 
-  <!--  <dependency>
+  <dependency>
 			<groupId>org.jboss.spec</groupId>
 			<artifactId>jboss-javaee-6.0</artifactId>
 			<version>1.0.0.Final</version>
 			<type>pom</type>
 			<scope>provided</scope>
-  </dependency>-->
+  </dependency>
   
   
   <!--  <dependency>
