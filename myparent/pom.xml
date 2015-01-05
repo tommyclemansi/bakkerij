@@ -80,6 +80,17 @@
 		</dependency>
 	</dependencies>
 
+<!-- 
+others to try
+ - obfuscator
+ - also need to test CDI / EJB junit test
+ - Apache Felix (bundle plugin): to create OSGI bundle out of maven project
+ - WSO2 Carbon: 
+ 
+ 
+ Plexus: this is inversion of control used by Maven
+ (like Spring)
+ -->
 		
   
   </project>
