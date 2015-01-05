@@ -14,13 +14,7 @@
   <module>../</module>
   </modules>
   <dependencies>
-<!--  <dependency>
-   	<groupId>org.jboss.spec.javax.ejb</groupId>
-   	<artifactId>jboss-ejb-api_3.1_spec</artifactId>
-   	<version>1.0.2.Final</version>
-   	<scope>provided</scope>
-   </dependency>-->
-
+  <!-- restricting now to a minimum and I only need jboss spec for the moment (or jee 6.0) -->
   <dependency>
 			<groupId>org.jboss.spec</groupId>
 			<artifactId>jboss-javaee-6.0</artifactId>
@@ -29,43 +23,6 @@
 			<scope>provided</scope>
   </dependency>
   
-  
-  <!--  <dependency>
-   	<groupId>javax.enterprise</groupId>
-   	<artifactId>cdi-api</artifactId>
-   	<version>1.2</version>
-   	<scope>provided</scope>
-   </dependency>
-   <dependency>
-   	<groupId>org.jboss.spec.javax.annotation</groupId>
-   	<artifactId>jboss-annotations-api_1.1_spec</artifactId>
-   	<version>1.0.1.Final</version>
-   	<scope>provided</scope>
-   </dependency>
-   
-   <dependency>
-   	<groupId>org.hibernate.javax.persistence</groupId>
-   	<artifactId>hibernate-jpa-2.0-api</artifactId>
-   	<version>1.0.1.Final</version>
-   	<scope>provided</scope>
-   </dependency>
-   
-   
-   
-<dependency>
-<groupId>org.hibernate</groupId>
-<artifactId>hibernate-validator</artifactId>
-<version>4.2.0.Final</version>
-<scope>provided</scope>
-<exclusions>
-<exclusion>
-<groupId>org.slf4j</groupId>
-<artifactId>slf4j-api</artifactId>
-</exclusion>
-</exclusions>
-</dependency>
-   -->
-   
 <!-- need to have a dependency for junit, this means the surefire plugin will use junit -->   
 		<dependency>
 			<groupId>junit</groupId>
