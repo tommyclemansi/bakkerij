@@ -14,6 +14,13 @@
   <module>../</module>
   </modules>
   <dependencies>
+<dependency>
+   	<groupId>org.jboss.spec.javax.ejb</groupId>
+   	<artifactId>jboss-ejb-api_3.1_spec</artifactId>
+   	<version>1.0.2.Final</version>
+   	<scope>provided</scope>
+   </dependency>
+
   <!--  <dependency>
 			<groupId>org.jboss.spec</groupId>
 			<artifactId>jboss-javaee-6.0</artifactId>
@@ -22,13 +29,6 @@
 			<scope>provided</scope>
   </dependency>-->
   
-   <dependency>
-	<groupId>org.jboss.bom</groupId>
-	<artifactId>jboss-javaee-6.0-with-all</artifactId>
-	<version>1.0.7.Final</version>
-   	<type>pom</type>
-   	<scope>provided</scope>
-   </dependency>
   
   <!--  <dependency>
    	<groupId>javax.enterprise</groupId>
@@ -50,12 +50,7 @@
    	<scope>provided</scope>
    </dependency>
    
-   <dependency>
-   	<groupId>org.jboss.spec.javax.ejb</groupId>
-   	<artifactId>jboss-ejb-api_3.1_spec</artifactId>
-   	<version>1.0.2.Final</version>
-   	<scope>provided</scope>
-   </dependency>
+   
    
 <dependency>
 <groupId>org.hibernate</groupId>
