@@ -16,7 +16,7 @@ import org.junit.Test;
  * @author tcleyman
  *
  */
-public class SoortServiceTest1 {
+public class SoortServiceTestCase {
 
 	/**
 	 * @throws java.lang.Exception
