@@ -5,10 +5,10 @@ package cdiDAO;
 
 import java.util.logging.Logger;
 
-import javax.ejb.Stateless;
+/*import javax.ejb.Stateless;
 import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
-import javax.inject.Named;
+import javax.inject.Named;*/
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -25,9 +25,12 @@ public class SoortDAO implements SoortDAOI {
 	 */
 	private Logger logger = Logger.getLogger(this.getClass().getName());
 	
-	// this does not work for some reason it states pu bakkerij not found 
-	/*@PersistenceContext(unitName="bakkerij")
-	private EntityManager em;*/
+	/* this does not work for some reason it states pu bakkerij not found
+	 * issue was down to simply the persistence.xml at wrong location, tried workarounds below
+	 * but now reverting to original 
+	 */
+	@PersistenceContext(unitName="primary")
+	private EntityManager em;
 	 
 	/*
 	 * JBAS011440: Can't find a persistence unit named null in deployment "ROOT.war"
@@ -35,10 +38,10 @@ public class SoortDAO implements SoortDAOI {
 	//@PersistenceContext
 	//private EntityManager em;
 	
-	// this is what is in the kitchensink example
+	/* this is another way of injecting the em - this is what is in the kitchensink example
 	// basically they are using a Resources class and then inject the 
-	@Inject
-	private EntityManager em;
+	//@Inject
+	//private EntityManager em;
 	
 	public SoortDAO() {
 		// TODO Auto-generated constructor stub
