@@ -20,21 +20,7 @@
 		<myproperty>1</myproperty>
 		<!-- to use do ${myproperty} -->
 	</properties>
-	<dependencies>
-		<!--added mongodb dependency, done by tcleyman -->
-		<!-- <dependency> <groupId>org.mongodb</groupId> <artifactId>mongo-java-driver</artifactId> 
-			<version>2.9.1</version> </dependency> -->
-
-
-		<!-- Needed for running tests (you may also use TestNG) -->
-
-		<!-- Optional, but highly recommended -->
-		<!-- Arquillian allows you to test enterprise code such as EJBs and Transactional(JTA) 
-			JPA from JUnit/TestNG -->
-		<!-- <dependency> <groupId>org.jboss.arquillian.junit</groupId> <artifactId>arquillian-junit-container</artifactId> 
-			<scope>test</scope> </dependency> -->
-		<!-- <dependency> <groupId>org.jboss.arquillian.protocol</groupId> <artifactId>arquillian-protocol-servlet</artifactId> 
-			<scope>test</scope> </dependency> -->
+	<dependencies>	
 	</dependencies>
 	<build>
 		<plugins>
@@ -95,6 +81,7 @@
 		<profile>
 			<!-- use this profile for internal testing. -->
 			<!-- this to test internally -->
+			<!-- this is called from Hudson -->
 			<id>tomsprofile</id>
 			<build>
 				<finalName>bakkerij</finalName>

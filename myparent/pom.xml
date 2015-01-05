@@ -14,23 +14,23 @@
   <module>../</module>
   </modules>
   <dependencies>
-  <dependency>
+  <!--  <dependency>
 			<groupId>org.jboss.spec</groupId>
 			<artifactId>jboss-javaee-6.0</artifactId>
 			<version>1.0.0.Final</version>
 			<type>pom</type>
 			<scope>provided</scope>
-  </dependency>
+  </dependency>-->
   
    <dependency>
-   	<groupId>org.jboss.bom</groupId>
-   	<artifactId>jboss-javaee-6.0-with-tools</artifactId>
-   	<version>1.0.7.Final</version>
+	<groupId>org.jboss.bom</groupId>
+	<artifactId>jboss-javaee-6.0-with-all</artifactId>
+	<version>1.0.7.Final</version>
    	<type>pom</type>
    	<scope>provided</scope>
    </dependency>
   
-  <dependency>
+  <!--  <dependency>
    	<groupId>javax.enterprise</groupId>
    	<artifactId>cdi-api</artifactId>
    	<version>1.2</version>
@@ -69,8 +69,9 @@
 </exclusion>
 </exclusions>
 </dependency>
+   -->
    
-   
+<!-- need to have a dependency for junit, this means the surefire plugin will use junit -->   
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

@@ -1,10 +1,12 @@
+/*******************************************************************************
+ * Copyright (c) 2015 Tom Cleymans
+ *******************************************************************************/
 /**
  * 
  */
 package bakkerij;
 
 import static org.junit.Assert.*;
-import junit.framework.Assert;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -14,7 +16,14 @@ import org.junit.Test;
 
 /**
  * @author tcleyman
- *
+ * 
+ */
+
+/*
+ * Note that test classes must end with
+ * TestCase
+ * or 
+ * Test
  */
 public class SoortServiceTestCase {
 
