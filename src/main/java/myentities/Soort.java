@@ -40,7 +40,8 @@ public class Soort implements Serializable {
      * een soort behoort to 0 of meerdere taarten
      */
     @ManyToMany(targetEntity = myentities.Taart.class)
-    private Set<Taart> taarten;
+    @JoinTable(joinColumns = @JoinColumn(name = "soort_id", referencedColumnName = "id", columnDefinition = "SOORTID"), inverseJoinColumns = @JoinColumn(name = "taarten_id", referencedColumnName = "id", columnDefinition = "TAARTID"))
+	private Set<Taart> taarten;
 	
 	public int getId() {
 		return id;
