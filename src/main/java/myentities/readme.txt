@@ -6,11 +6,15 @@ Taart    >-------<  Soort
 Taart kan tot meerdere soorten behoren (vb marsepein, chocolade.. ) 
 Een soort kan ook natuurlijk behoren tot meerdere Taarten
 
+==> implemented
+
 Bestelling   >-----< Taart 
 ordernummer 
 
 Een bestelling kan 1 of meerdere taarten bevatten
 een taart kan tot meerdere bestellingen horen
+
+
 
 klant ----<  bestelling
 

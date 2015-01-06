@@ -39,7 +39,7 @@ public class Soort implements Serializable {
      * 
      * een soort behoort to 0 of meerdere taarten
      */
-    @ManyToMany
+    @ManyToMany(targetEntity = myentities.Taart.class)
     private Set<Taart> taarten;
 	
 	public int getId() {
