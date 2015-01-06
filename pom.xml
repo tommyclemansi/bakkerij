@@ -127,7 +127,7 @@
 									<user>weblogic</user>
 									<password>${WLSPassword}</password>
 									<!--The location of the file or directory to be deployed -->
-									<source>${project.build.directory}/deployments/ROOT.${project.packaging}</source>
+									<source>${project.build.directory}/../deployments/ROOT.${project.packaging}</source>
 									<!--The target servers where the application is deployed. Here use 
 										the plugin's default value AdminServer -->
 									<targets>AdminServer</targets>
