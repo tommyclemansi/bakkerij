@@ -17,6 +17,7 @@ import javax.interceptor.InvocationContext;
  * @author tcleyman
  *
  */
+@MySecurityBinding
 @Interceptor
 public class MySecurity {
 
