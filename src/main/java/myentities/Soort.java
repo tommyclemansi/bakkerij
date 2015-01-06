@@ -29,7 +29,8 @@ public class Soort implements Serializable {
 	@GeneratedValue(strategy = SEQUENCE, generator = "SOORTSEQUENCE")
 	private int id;
 
-    /*
+   
+	/*
      * gewoon een soortNaam
      */
     private String soort;
@@ -63,4 +64,12 @@ public class Soort implements Serializable {
 		super();
 	}
    
+	 public Set<Taart> getTaarten() {
+			return taarten;
+		}
+
+		public void setTaarten(Set<Taart> taarten) {
+			this.taarten = taarten;
+		}
+
 }
