@@ -100,8 +100,10 @@
 						</configuration>
 					</plugin>
 					<!-- added for deployment on WLS, this for internal test -->
-					<!-- mvn help:describe -DgroupId=com.oracle.weblogic -DartifactId=weblogic-maven-plugin -Dversion=12.1.3-0-0
-					 http://docs.oracle.com/middleware/1213/wls/WLPRG/maven.htm#WLPRG883
+					<!-- 
+					mvn help:describe -DgroupId=com.oracle.weblogic -DartifactId=weblogic-maven-plugin -Dversion=12.1.3-0-0
+					http://docs.oracle.com/middleware/1213/wls/WLPRG/maven.htm#WLPRG883
+					mvn help:describe -DgroupId=com.oracle.weblogic -DartifactId=weblogic-maven-plugin -Dversion=12.1.3-0-0 -Dmojo=deploy -Ddetail
 					 -->
 					<plugin>
 						<!-- This is the configuration for the weblogic-maven-plugin -->
@@ -118,7 +120,7 @@
 								<id>wls-deploy</id>
 								<phase>pre-integration-test</phase>
 								<goals>
-									<goal>deploy</goal>
+									<goal>redeploy</goal>
 								</goals>
 								<configuration>
 									<!--The admin URL where the app is deployed. Here use the plugin's 
