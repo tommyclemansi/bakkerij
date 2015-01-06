@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_1.xsd"
+	version="3.1">
+	<description>Enterprise JavaBeans 3.1</description>
+	<display-name>Enterprise JavaBeans 3.1</display-name>
+	<interceptors>
+	<description>log around invoking methods</description>
+	<interceptor>
+	<interceptor-class>
+			myInterceptor.MyLogger
+	</interceptor-class>
+	</interceptor>
+	</interceptors>
+	<assembly-descriptor>
+	<interceptor-binding>
+	<!-- do this for all ejbs -->
+	<ejb-name>*</ejb-name>
+	<interceptor-class>
+	myInterceptor.MyLogger
+	</interceptor-class>
+	</interceptor-binding>
+	</assembly-descriptor>
+</ejb-jar>

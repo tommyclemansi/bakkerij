@@ -33,8 +33,13 @@ import cdiDAO.SoortDAOI;
 @WebService
 @Stateless
 @LocalBean
+/*
+ * removed below 2, first one was not working, second one was working but
+ * moved this to the web-xml.jar file
+ * this to generalize and do this for all Beans automagically
+ */
 // @Interceptors(myInterceptor.MyLogger.class)
-@TomsLog
+//@TomsLog
 public class SoortService {
 
 	private Logger logger = Logger.getLogger(this.getClass().getName());
