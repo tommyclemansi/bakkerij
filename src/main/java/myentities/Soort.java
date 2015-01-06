@@ -4,7 +4,10 @@
 package myentities;
 
 import java.io.Serializable;
+import java.util.Set;
+
 import javax.persistence.*;
+
 import static javax.persistence.GenerationType.SEQUENCE;
 
 /**
@@ -26,7 +29,16 @@ public class Soort implements Serializable {
 	@GeneratedValue(strategy = SEQUENCE, generator = "SOORTSEQUENCE")
 	private int id;
 
+    /*
+     * gewoon een soortNaam
+     */
     private String soort;
+    
+    /*
+     * taarten die tot die soort behoren
+     */
+    
+    private Set<Taart> taarten;
 	
 	public int getId() {
 		return id;

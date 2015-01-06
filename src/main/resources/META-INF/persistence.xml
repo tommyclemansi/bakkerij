@@ -10,6 +10,10 @@
 		<!-- <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> -->
 		<class>myentities.Taart</class>
 		<class>myentities.Soort</class>
+		<class>myentities.Bestelling</class>
+		<class>myentities.Klant</class>
+		<class>myentities.FamilieKlant</class>
+		<class>myentities.VriendelijkeKlant</class>
 		<properties>
 			<property name="eclipselink.target-server" value="None" />
 			<property name="hibernate.archive.autodetection" value="class" />

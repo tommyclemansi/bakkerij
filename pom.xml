@@ -170,4 +170,17 @@
 	<organization>
 		<name>tcleyman</name>
 	</organization>
+	<url>http://bakkerij-tcleyman.rhcloud.com</url>
+	<description>POC website of different technologies</description>
+	<scm>
+		<url>https://github.com/tommyclemansi/bakkerij</url>
+		<developerConnection>me myself and I</developerConnection>
+	</scm>
+	<ciManagement>
+		<url>http://localhost:8080</url>
+		<system>Hudson</system>
+	</ciManagement>
+	<issueManagement>
+		<system>Not Determined</system>
+	</issueManagement>
 </project>
