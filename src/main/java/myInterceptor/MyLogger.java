@@ -37,7 +37,7 @@ public class MyLogger {
 	// this is an implementation:
 	@PostConstruct()
     @PostActivate()
-    public void initialize()
+    public void initialize(InvocationContext ic) throws Exception
     {
     logger.log(Level.INFO,"initialize called (PostConstruct,PostActivate)");	
     }
@@ -45,9 +45,9 @@ public class MyLogger {
     
     @PreDestroy()
     @PrePassivate()
-    public void cleanup()
+    public void cleanup(InvocationContext ic) throws Exception
     {
-    logger.log(Level.INFO, "");	
+    logger.log(Level.INFO, "cleanup called (PreDestroy or PrePassivate)");	
     }
 	public MyLogger() {
 		// TODO Auto-generated constructor stub
