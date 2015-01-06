@@ -138,7 +138,7 @@
 							<!-- Stop the application in the pre-integration-test phase -->
 							<execution>
 								<id>wls-stop-app</id>
-								<phase>pre-integration-test</phase>
+								<phase>post-integration-test</phase>
 								<goals>
 									<goal>stop-app</goal>
 								</goals>
@@ -146,7 +146,7 @@
 									<adminurl>t3://127.0.0.1:7001</adminurl>
 									<user>weblogic</user>
 									<password>${WLSPassword}</password>
-									<name>ROOT</name>
+									<name>${project.build.finalName}</name>
 								</configuration>
 							</execution>
 						</executions>
