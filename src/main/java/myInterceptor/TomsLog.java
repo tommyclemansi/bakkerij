@@ -15,7 +15,8 @@ import javax.interceptor.InterceptorBinding;
  * created this because I couldn't get EJB interceptors to work
  * so using CDI interceptors
  * 
- * need to do this later 
+ * This is InterceptorBinding
+ * now one can annotate the class or method with TomsLog to facilitate  
  */
 @InterceptorBinding
 @Target({TYPE,METHOD})

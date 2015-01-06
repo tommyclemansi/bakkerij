@@ -27,7 +27,7 @@ public class MyLogger {
 	private Logger logger = Logger.getLogger(this.getClass().getName());
 	
 	/**
-	 * 
+	 *  I might add the lifecycles methods also here for logging purposes
 	 */
 	public MyLogger() {
 		// TODO Auto-generated constructor stub
