@@ -4,5 +4,6 @@
  <!-- tried with EJB interceptor, but didn't work WELD WELD-000069 An interceptor must have at least one binding, -->
  <interceptors>
   <class>myInterceptor.MyLogger</class>
+  <class>myInterceptor.MySecurity</class>
  </interceptors>
 </beans>
