@@ -57,7 +57,7 @@ public class OrderProcessor implements SessionSynchronization
     @PrePassivate()
     public void cleanup()
     {
-    logger.log(Level.INFO, "");	
+    logger.log(Level.INFO, "preDestroy or Prepassivate called");	
     }
     
     

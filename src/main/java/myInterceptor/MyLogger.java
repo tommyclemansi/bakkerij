@@ -9,6 +9,10 @@ package myInterceptor;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.ejb.PostActivate;
+import javax.ejb.PrePassivate;
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
@@ -29,6 +33,22 @@ public class MyLogger {
 	/**
 	 *  I might add the lifecycles methods also here for logging purposes
 	 */
+	
+	// this is an implementation:
+	@PostConstruct()
+    @PostActivate()
+    public void initialize()
+    {
+    logger.log(Level.INFO,"initialize called (PostConstruct,PostActivate)");	
+    }
+    
+    
+    @PreDestroy()
+    @PrePassivate()
+    public void cleanup()
+    {
+    logger.log(Level.INFO, "");	
+    }
 	public MyLogger() {
 		// TODO Auto-generated constructor stub
 	}
