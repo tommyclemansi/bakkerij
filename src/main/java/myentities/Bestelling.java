@@ -1,6 +1,8 @@
 package myentities;
 
 import java.io.Serializable;
+import java.util.Map;
+
 import javax.persistence.*;
 
 /**
@@ -29,8 +31,10 @@ public class Bestelling implements Serializable {
 	/*
 	 * Here I will store Taarten tesamen met aantal
 	 */
-    
-	//public Map<Taart,int aantal> Bestelling;  
+    @ManyToMany
+    @MapKeyColumn(name="NO_ORDERED") // this is the integer (aantal taartjes besteld)
+	@JoinTable(joinColumns = @JoinColumn(name = "ORDERNO", referencedColumnName = "orderNr", columnDefinition = "ORDERNO"), inverseJoinColumns = @JoinColumn(name = "TAARTID", referencedColumnName = "id", columnDefinition = "TAARTID"))
+	private Map<Integer,Taart> Bestelling;  
 	
 	public Bestelling() {
 		super();
