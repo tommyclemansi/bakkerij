@@ -36,8 +36,10 @@ public class Soort implements Serializable {
     
     /*
      * taarten die tot die soort behoren
+     * 
+     * een soort behoort to 0 of meerdere taarten
      */
-    
+    @ManyToMany
     private Set<Taart> taarten;
 	
 	public int getId() {

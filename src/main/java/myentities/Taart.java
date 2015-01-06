@@ -52,8 +52,14 @@ public class Taart implements Serializable {
 	public void setSoort(Set<Soort> soort) {
 		this.soort = soort;
 	}
-	@ManyToMany
-	@JoinTable(name = "TAART_SOORT")
+	
+	/*
+	 * Soort.taarten is hier de owner van de relatie
+	 * 
+	 */
+	
+	@ManyToMany(mappedBy = "taarten")
+	//@JoinTable(name = "TAART_SOORT")
 	private Set<Soort> soort;
 	
 	/*

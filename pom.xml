@@ -134,6 +134,7 @@
 										the plugin's default value AdminServer -->
 									<targets>AdminServer</targets>
 									<verbose>true</verbose>
+									<advanced>true</advanced>
 									<name>${project.build.finalName}</name>
 								</configuration>
 							</execution>

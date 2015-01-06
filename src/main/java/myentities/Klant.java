@@ -1,6 +1,8 @@
 package myentities;
 
 import java.io.Serializable;
+import java.util.Set;
+
 import javax.persistence.*;
 
 /**
@@ -19,30 +21,41 @@ public abstract class Klant implements Serializable {
 	
 	//PK
 	@Id
-	private int Id;
+	private int id;
 	/*
 	 * elke klant heeft een naam en email (kon ook pk zijn)
 	 */
-	private String Naam;
-	private String Email;
-
+	private String naam;
+	private String email;
+	
+	/*
+	 * een klant heeft0 of meerdere bestellingen
+	 * mappedBy betekent hier dat:
+	 * 
+	 * Bestelling.klant de owner van de relatie is 
+	 * dus een Bestelling kan niet bestaan zonder een klant
+	 * 
+	 */
+	@OneToMany(mappedBy = "klant")
+    private Set<Bestelling> bestellingen;
+	
 	public int getId() {
-		return Id;
+		return id;
 	}
 	public void setId(int id) {
-		Id = id;
+		id = id;
 	}
 	public String getNaam() {
-		return Naam;
+		return naam;
 	}
 	public void setNaam(String naam) {
-		Naam = naam;
+		naam = naam;
 	}
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 	public void setEmail(String email) {
-		Email = email;
+		email = email;
 	}
    
 }
