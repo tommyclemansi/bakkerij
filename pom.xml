@@ -120,7 +120,8 @@
 								<id>wls-deploy</id>
 								<phase>pre-integration-test</phase>
 								<goals>
-									<goal>redeploy</goal>
+								 <goal>deploy</goal>
+									<!--  <goal>redeploy</goal>-->
 								</goals>
 								<configuration>
 									<!--The admin URL where the app is deployed. Here use the plugin's 
