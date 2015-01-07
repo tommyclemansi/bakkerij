@@ -19,5 +19,5 @@ Technologies used in Project
 - MYSQL
 
 Currently is in start phase 
-
+all JEE 6 Web Profile EJB Lite
 writen by tcleyman

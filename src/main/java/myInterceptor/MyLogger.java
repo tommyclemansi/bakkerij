@@ -14,6 +14,7 @@ import javax.annotation.PreDestroy;
 import javax.ejb.PostActivate;
 import javax.ejb.PrePassivate;
 import javax.interceptor.AroundInvoke;
+import javax.interceptor.AroundTimeout;
 import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
 
@@ -31,7 +32,9 @@ public class MyLogger {
 	private Logger logger = Logger.getLogger(this.getClass().getName());
 	
 	/**
-	 *  I might add the lifecycles methods also here for logging purposes
+	 *  Logging Interceptor
+	 *  
+	 *  Placed on every bean through ejb-jar.xml file
 	 */
 	
 	// this is an implementation:
@@ -39,7 +42,8 @@ public class MyLogger {
     @PostActivate()
     public void initialize(InvocationContext ic) throws Exception
     {
-    logger.log(Level.INFO,"initialize called (PostConstruct,PostActivate)");	
+		logger.log(Level.INFO,"initialize (PostConstruct, PostActivate): " + "class: " + ic.getClass().getName() +" method: " + ic.getMethod().getName() + " target: " + ic.getTarget().getClass().getName());
+			
     }
     
     
@@ -47,11 +51,23 @@ public class MyLogger {
     @PrePassivate()
     public void cleanup(InvocationContext ic) throws Exception
     {
-    logger.log(Level.INFO, "cleanup called (PreDestroy or PrePassivate)");	
-    }
+    	logger.log(Level.INFO,"cleanup(PreDestroy, PrePassivate): " + "class: " + ic.getClass().getName() +" method: " + ic.getMethod().getName() + " target: " + ic.getTarget().getClass().getName());
+		 }
+    
 	public MyLogger() {
 		// TODO Auto-generated constructor stub
 	}
+
+	/*
+	 * when ejb timeouts
+	 */
+    @AroundTimeout()
+    public void aroundTimeouts (InvocationContext ic) throws Exception
+    {
+    	logger.log(Level.INFO,"aroundTimeouts: " + "class: " + ic.getClass().getName() +" method: " + ic.getMethod().getName() + " target: " + ic.getTarget().getClass().getName());
+			
+    }
+    
 
 	/**
 	 * @param ic
@@ -65,8 +81,7 @@ public class MyLogger {
 	
 	@AroundInvoke
 	public Object aroundInvoke(InvocationContext ic) throws Exception {
-		System.out.println("myLogging interceptor: " + "class: " + ic.getClass().getName() +" method: " + ic.getMethod().getName() + " target: " + ic.getTarget().getClass().getName());
-		logger.log(Level.INFO,"myLogging interceptor: " + "class: " + ic.getClass().getName() +" method: " + ic.getMethod().getName() + " target: " + ic.getTarget().getClass().getName());
+		logger.log(Level.INFO,"aroundInvoke: " + "class: " + ic.getClass().getName() +" method: " + ic.getMethod().getName() + " target: " + ic.getTarget().getClass().getName());
 		return ic.proceed();
    }
 

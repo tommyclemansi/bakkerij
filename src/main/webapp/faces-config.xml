@@ -3,6 +3,11 @@
 <faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
  <managed-bean>
+ <!-- note here that this is a backing bean for JSF
+      It is maybe better to use CDI instead of backing beans
+      since any Pojo can be injected
+      With CDI JSF can directly invoke methods on EJBs
+  -->
   <managed-bean-name>mainPage</managed-bean-name>
   <managed-bean-class>mybeans.mainPage</managed-bean-class>
   <managed-bean-scope>session</managed-bean-scope>

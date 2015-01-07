@@ -6,13 +6,16 @@
  */
 package mybeans;
 
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
+
 /**
  * @author tcleyman
  *
  */
 /*
- * this is a managed bean (made it SessionScoped)
- * this for the mainPage
+ * this is THE SAME managed bean (made it SessionScoped)
+ * BUT using CDI instead
  * 
  * Note that this is a POJO
  * But is defined in faces-config.xml file as managed-bean
@@ -20,8 +23,26 @@ package mybeans;
  * 
  * Better is to use CDI
  */
-public class mainPage {
-	public mainPage() {
+
+/*
+ * Named will make the Class available from JSF in EL
+ * so #{mainPageCDI.name} for example
+ * 
+ * for JSF backing beans:
+ * use request or conversation scope 
+ * conversation is shorter then session - handle multi tab
+ * 
+ * by default conversation is like request scope
+ * but can be extended programatically 
+ * 
+ * 
+ * In JSF never use Dependent scope as this implies 
+ * a new bean
+ */
+@Named
+@SessionScoped
+public class mainPageCDI {
+	public mainPageCDI() {
 	}
 	
 	private String name="Tom Cleymans";

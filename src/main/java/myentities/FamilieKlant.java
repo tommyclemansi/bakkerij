@@ -3,6 +3,7 @@ package myentities;
 import java.io.Serializable;
 
 import javax.persistence.*;
+import static javax.persistence.FetchType.LAZY;
 
 /**
  * Entity implementation class for Entity: FamilieKlant
@@ -24,6 +25,7 @@ public class FamilieKlant extends Klant implements Serializable {
 	 * hier kunnen we no foto insteken
 	 */
 	@Lob
+	@Basic(fetch = LAZY)
 	private Byte[] image;  
 	
    

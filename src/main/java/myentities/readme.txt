@@ -1,3 +1,8 @@
+TO DO
+======
+implement EntityListeners for callbacks
+
+
 Aim is the following
 --------------------
 
@@ -31,7 +36,7 @@ een bestelling kan maar tot 1 klant behoren
 Klant is abstract, er zijn 2 soorten
  - FamilieKlant: de familie
  - VriendelijkeKlant: ne vriendelijke mens die is een taartje wil
- ==> still to be implemented correctly (MappedSuperClass)
+ ==> done need to review tables (MappedSuperClass)
  
  This generates following:
  2015/01/06 17:24:13,603 INFO  [org.hibernate.cfg.Environment] (MSC service thread 1-3) HHH000021: Bytecode provider name : javassist

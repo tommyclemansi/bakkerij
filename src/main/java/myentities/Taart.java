@@ -7,8 +7,10 @@ import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 import static javax.persistence.GenerationType.SEQUENCE;
+import static javax.persistence.FetchType.LAZY;
 
 /**
  * Entity implementation class for Entity: Taartje
@@ -31,7 +33,11 @@ public class Taart implements Serializable {
 	
 	/*
 	 * naam van dee Taart
+	 * 
+	 * making use of Bean validation here.. 
+	 * @PrePersist, PreUpdate & PreRemove will trigger this
 	 */
+	@NotNull(message="Naam van de taart is verplicht")
 	private String naam;
 	
 	/*
@@ -67,6 +73,7 @@ public class Taart implements Serializable {
 	 */
 	
     @Lob
+	@Basic(fetch = LAZY)
 	private Byte[] image;  
 	
 	public Byte[] getImage() {

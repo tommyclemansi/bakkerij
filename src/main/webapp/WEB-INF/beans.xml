@@ -1,9 +1,15 @@
 <?xml version="1.0"?>
+<!-- CDI Marker file
+		this implies:
+     	Web Container + CDI Container
+CDI beans can be Pojo, JSF managed beans & EJbs -->
 <beans xmlns="http://java.sun.com/xml/ns/javaee"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://jboss.org/schema/cdi/beans_1_0.xsd">
  <!-- tried with EJB interceptor, but didn't work WELD WELD-000069 An interceptor must have at least one binding, -->
+ <!-- interceptors are for generic logic -->
  <interceptors>
   <class>myInterceptor.MyLogger</class>
   <class>myInterceptor.MySecurity</class>
  </interceptors>
+ <!-- decorators  implement the interface of class its intercepting, so not generic-->
 </beans>

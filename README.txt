@@ -18,6 +18,7 @@ Technologies used in Project
 - JPA
 - MYSQL
 
+all JEE 6 Web Profile EJB Lite
 Currently is in start phase 
 
 writen by tcleyman
