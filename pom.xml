@@ -114,6 +114,31 @@
 							<middlewareHome>C:\PRODUCTS\WLS1213</middlewareHome>
 						</configuration>
 						<executions>
+						   <!-- first undeploy, then deploy -->
+						   	<execution>
+								<id>wls-undeploy</id>
+								<phase>pre-integration-test</phase>
+								<goals>
+								 <goal>undeploy</goal>
+									<!--  <goal>redeploy</goal>-->
+								</goals>
+								<configuration>
+									<!--The admin URL where the app is deployed. Here use the plugin's 
+										default value t3://localhost:7001 -->
+									<adminurl>t3://127.0.0.1:7001</adminurl>
+									<user>weblogic</user>
+									<password>${WLSPassword}</password>
+									<!--The location of the file or directory to be deployed -->
+									<source>${project.build.directory}/../deployments/ROOT.${project.packaging}</source>
+									<!--The target servers where the application is deployed. Here use 
+										the plugin's default value AdminServer -->
+									<targets>AdminServer</targets>
+									<verbose>true</verbose>
+									<!--  <advanced>true</advanced>-->
+									<name>${project.build.finalName}</name>
+								</configuration>
+							</execution>
+						
 							<!-- Deploy the application to the WebLogic Server in the pre-integration-test 
 								phase -->
 							<execution>
