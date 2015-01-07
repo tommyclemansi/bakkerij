@@ -10,6 +10,12 @@ import javax.persistence.*;
  * abstract prevents it from being initialized
  */
 @Entity
+@Inheritance(strategy=InheritanceType.JOINED)
+/* we will have a discriminatorcolumn in Klant table
+ * 
+ * F=Familie
+ * V= ne vriendelijke Klant  */
+@DiscriminatorColumn(name="KLANT_TYPE",discriminatorType=DiscriminatorType.STRING,length=1)
 public abstract class Klant implements Serializable {
 
 	
@@ -27,6 +33,7 @@ public abstract class Klant implements Serializable {
 	 */
 	private String naam;
 	private String email;
+	
 	
 	/*
 	 * een klant heeft0 of meerdere bestellingen

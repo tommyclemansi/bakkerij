@@ -9,6 +9,8 @@ import javax.persistence.*;
  *
  */
 @Entity
+@DiscriminatorValue(value="F")
+@PrimaryKeyJoinColumn(name = "KLANT_ID", columnDefinition = "KLANT_ID")
 public class FamilieKlant extends Klant implements Serializable {
 
 	

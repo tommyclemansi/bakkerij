@@ -1,6 +1,7 @@
 package myentities;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
 
 /**
@@ -8,7 +9,8 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@DiscriminatorValue(value="V")
+@PrimaryKeyJoinColumn(name = "KLANT_ID", columnDefinition = "KLANT_ID")
 public class VriendelijkeKlant extends Klant implements Serializable {
 
 	
