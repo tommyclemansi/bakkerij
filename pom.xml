@@ -203,7 +203,6 @@
 	<url>http://bakkerij-tcleyman.rhcloud.com</url>
 	<description>POC website of different technologies</description>
 	<scm>
-		<url>https://github.com/tommyclemansi/bakkerij</url>
 		<developerConnection>me myself and I</developerConnection>
 	</scm>
 	<ciManagement>
