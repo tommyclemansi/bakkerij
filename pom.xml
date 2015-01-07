@@ -203,7 +203,7 @@
 	<url>http://bakkerij-tcleyman.rhcloud.com</url>
 	<description>POC website of different technologies</description>
 	<scm>
-		<developerConnection>me myself and I</developerConnection>
+		<developerConnection>tcleyman</developerConnection>
 	</scm>
 	<ciManagement>
 		<url>http://localhost:8080</url>
