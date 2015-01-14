@@ -6,6 +6,9 @@
  */
 package mybeans;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.enterprise.context.SessionScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
@@ -44,17 +47,42 @@ import javax.inject.Named;
 @Named
 @SessionScoped
 public class mainPageCDI {
+	/*
+	 * static block at mainPageCDI class init.. 
+	 */
+
+	
 	public mainPageCDI() {
 	ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
 	userAgent = ec.getRequestHeaderMap().get("User-agent");
+    logger.log(Level.INFO,"user agent is " + userAgent);
+    /*
+     * I'm assuming anyone is using firefox, if your not using firefox we'll set that one to false.. 
+     */
+	if (userAgent.toLowerCase().indexOf("firefox")!=-1)
+		ffox=false;
+	logger.log(Level.INFO,"is firefox used: " + ffox);
 	}
 	
 	private String name="Tom Cleymans";
 	private int id=0;
 	private String userAgent;
+	private boolean ffox=true;//assume firefox is used
+	private static final Logger logger = Logger.getLogger(mainPageCDI.class.getName());
+	
+	static
+	{ 
+	    logger.log(Level.INFO,"CDI page initialized for bakkerij");
+	}
 	
 	public String getUserAgent() {
 		return userAgent;
+	}
+	public boolean isFfox() {
+		return ffox;
+	}
+	public void setFfox(boolean ffox) {
+		this.ffox = ffox;
 	}
 	public void setUserAgent(String userAgent) {
 		this.userAgent = userAgent;

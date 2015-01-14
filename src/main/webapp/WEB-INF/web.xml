@@ -16,7 +16,7 @@
 		<url-pattern>*.xhtml</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
-		<welcome-file>mainPage.xhtml</welcome-file>
+		<welcome-file>bakkerij.xhtml</welcome-file>
 	</welcome-file-list>
 	<!-- env entry , can be looked up in code -->
 	<env-entry>
