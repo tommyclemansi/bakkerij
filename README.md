@@ -10,14 +10,15 @@ Technologies used:
 - push to cloud 
 
 Technologies used in Project
-- HTML 5
+- XHTML (from JSF with AJAX),  
+- HTML5 page  
 - JSF
 - EJB (Stateless,Stateful, Singleton)
 - CDI
 - JAX-WS
 - JPA
-- MYSQL
+- MYSQL (backing up files)
 
 Currently is in start phase 
-all JEE 6 Web Profile EJB Lite
-writen by tcleyman
+all JEE 6 Web Profile (EJB Lite)
+Project writen by tcleyman aka Tommyclemansi
