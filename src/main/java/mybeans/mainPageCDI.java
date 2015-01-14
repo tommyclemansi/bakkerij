@@ -6,6 +6,9 @@
  */
 package mybeans;
 
+
+
+import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -43,14 +46,18 @@ import javax.inject.Named;
  * 
  * In JSF never use Dependent scope as this implies 
  * a new bean
+ * 
+ * must implement Serializable ! 
  */
 @Named
 @SessionScoped
-public class mainPageCDI {
+public class mainPageCDI implements Serializable
+{
 	/*
 	 * static block at mainPageCDI class init.. 
 	 */
 
+	private static final long serialVersionUID = 1L;
 	
 	public mainPageCDI() {
 	ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
