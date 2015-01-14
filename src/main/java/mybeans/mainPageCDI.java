@@ -66,7 +66,7 @@ public class mainPageCDI implements Serializable
     /*
      * I'm assuming anyone is using firefox, if your not using firefox we'll set that one to false.. 
      */
-	if (userAgent.toLowerCase().indexOf("firefox")!=-1)
+	if (userAgent.toLowerCase().indexOf("firefox")==-1)// -1 FFOX is not found in String
 		ffox=false;
 	logger.log(Level.INFO,"is firefox used: " + ffox);
 	}
