@@ -28,8 +28,11 @@ import javax.interceptor.InvocationContext;
 @TomsLog
 @Interceptor
 public class MyLogger {
-
-	private Logger logger = Logger.getLogger(this.getClass().getName());
+    /*
+     * changed to private static final 
+     * Logger should be Thread Safe
+     */
+	private static final Logger logger = Logger.getLogger(MyLogger.class.getName());
 	
 	/**
 	 *  Logging Interceptor
