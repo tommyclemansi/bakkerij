@@ -45,11 +45,8 @@ public class MyLogger {
     @PostActivate()
     public void initialize(InvocationContext ic) throws Exception
     {
-		if (logger == null)
-			System.out.println("sorry logger not initialized");
-		else if (ic == null)
-			System.out.println("sorry ic is null");
-//		logger.log(Level.INFO,"initialize (PostConstruct, PostActivate): " + "class: " + ic.getClass().getName() +" method: " + ic.getMethod().getName() + " target: " + ic.getTarget().getClass().getName());
+		// fixed npe as no method off course.. 
+        // logger.log(Level.INFO,"initialize (PostConstruct, PostActivate): " + "class: " + ic.getClass().getName() +" method: " + ic.getMethod().getName() + " target: " + ic.getTarget().getClass().getName());
 		// assume getMethod returns null 
 		logger.log(Level.INFO,"initialize (PostConstruct, PostActivate): " + "class: " + ic.getClass().getName() );			
     }
@@ -59,7 +56,7 @@ public class MyLogger {
     @PrePassivate()
     public void cleanup(InvocationContext ic) throws Exception
     {
-    	logger.log(Level.INFO,"cleanup(PreDestroy, PrePassivate): " + "class: " + ic.getClass().getName() +" method: " + ic.getMethod().getName() + " target: " + ic.getTarget().getClass().getName());
+    	logger.log(Level.INFO,"cleanup(PreDestroy, PrePassivate): " + "class: " + ic.getClass().getName() );		
 		 }
     
 	public MyLogger() {
