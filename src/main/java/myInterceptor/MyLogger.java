@@ -60,12 +60,13 @@ public class MyLogger {
 
 	/*
 	 * when ejb timeouts
+	 * !! this method must return an object
 	 */
     @AroundTimeout()
-    public void aroundTimeouts (InvocationContext ic) throws Exception
+    public Object aroundTimeouts (InvocationContext ic) throws Exception
     {
-    	logger.log(Level.INFO,"aroundTimeouts: " + "class: " + ic.getClass().getName() +" method: " + ic.getMethod().getName() + " target: " + ic.getTarget().getClass().getName());
-			
+    	logger.log(Level.INFO,"aroundTimeouts: " + "class: " + ic.getClass().getName() +" method: " + ic.getMethod().getName() + " target: " + ic.getTarget().getClass().getName());    
+        return ic.proceed();   
     }
     
 
