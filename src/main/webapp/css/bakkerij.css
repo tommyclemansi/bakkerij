@@ -1,0 +1,27 @@
+@CHARSET "ISO-8859-1";
+
+.image-thumb{
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+	max-height:120px;
+	max-width: 120px;
+}
+
+.image-large{
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+	min-height:160px;
+	min-width:160px;
+	max-width: 100%;
+}
+
+.video-large{
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+	min-height:160px;
+	min-width:160px;
+	max-width: 100%;
+}

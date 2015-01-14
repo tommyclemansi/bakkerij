@@ -7,6 +7,8 @@
 package mybeans;
 
 import javax.enterprise.context.SessionScoped;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 /**
@@ -43,10 +45,20 @@ import javax.inject.Named;
 @SessionScoped
 public class mainPageCDI {
 	public mainPageCDI() {
+	ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
+	userAgent = ec.getRequestHeaderMap().get("User-agent");
 	}
 	
 	private String name="Tom Cleymans";
 	private int id=0;
+	private String userAgent;
+	
+	public String getUserAgent() {
+		return userAgent;
+	}
+	public void setUserAgent(String userAgent) {
+		this.userAgent = userAgent;
+	}
 	/**
 	 * @return the name
 	 */

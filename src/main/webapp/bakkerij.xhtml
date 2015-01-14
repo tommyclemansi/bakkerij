@@ -17,6 +17,7 @@
 <h:head>
 <!-- this page is an attempt main page for bakkerij , is in really early phase -->
 <title>Bakkerij Cleymans - de Lukken</title>
+<link href="#{request.contextPath}/css/bakkerij.css" rel="stylesheet" type="text/css"/>
 </h:head> 
 <body>
 <div>
@@ -24,11 +25,26 @@
 </div>
     <rich:panel>
         <f:facet name="header">
-        Write your own custom rich components with built-in AJAX support
+        Please note that this is just a POC page
         </f:facet>
-		<h:outputText value="Panel Body" /> 
+		<h:outputText value="POC" /> 
 	</rich:panel>
 <!-- below is component I reused..  -->
+<!-- in the constructor of mainPageCDI I'm getting the FacesContext and getting useragent 
+with this we can check if a mobile browser is used-->
+BrowserAgent: #{mainPageCDI.userAgent}<br/>
+       <!--   <h:panelGroup rendered="#{bean.type == 'OGV_VIDEO'}">
+            <video class="video-large" controls="controls" autoplay="autoplay">
+                <source type="video/ogg" src="#{request.contextPath}/#{mediaItemBean.mediaItem.id}" />
+                Your browser does not support the video tag.
+            </video>
+        </h:panelGroup>
+        <h:panelGroup rendered="#{bean.type == 'MP4_VIDEO'}">
+            <video class="video-large" controls="controls" autoplay="autoplay">
+                <source type="video/mp4" src="#{request.contextPath}/#{mediaItemBean.mediaItem.id}" />
+                Your browser does not support the video tag.
+            </video>
+        </h:panelGroup>-->
 <tomstest:Footer/>
 </body> 
 </html>
