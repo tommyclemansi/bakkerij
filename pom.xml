@@ -18,10 +18,8 @@
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
 		<myproperty>1</myproperty>
-		<!-- read tcleyman.WLSPassword from command line
-		-Dtcleyman.WLSPassword=mypassword
-		this should be the password of the WLS admin
-		 -->
+		<!-- read tcleyman.WLSPassword from command line -Dtcleyman.WLSPassword=mypassword 
+			this should be the password of the WLS admin -->
 		<WLSPassword>${tcleyman.WLSPassword}</WLSPassword>
 		<!-- to use do ${myproperty} -->
 	</properties>
@@ -98,11 +96,10 @@
 						</configuration>
 					</plugin>
 					<!-- added for deployment on WLS, this for internal test -->
-					<!-- 
-					mvn help:describe -DgroupId=com.oracle.weblogic -DartifactId=weblogic-maven-plugin -Dversion=12.1.3-0-0
-					http://docs.oracle.com/middleware/1213/wls/WLPRG/maven.htm#WLPRG883
-					mvn help:describe -DgroupId=com.oracle.weblogic -DartifactId=weblogic-maven-plugin -Dversion=12.1.3-0-0 -Dmojo=deploy -Ddetail
-					 -->
+					<!-- mvn help:describe -DgroupId=com.oracle.weblogic -DartifactId=weblogic-maven-plugin 
+						-Dversion=12.1.3-0-0 http://docs.oracle.com/middleware/1213/wls/WLPRG/maven.htm#WLPRG883 
+						mvn help:describe -DgroupId=com.oracle.weblogic -DartifactId=weblogic-maven-plugin 
+						-Dversion=12.1.3-0-0 -Dmojo=deploy -Ddetail -->
 					<plugin>
 						<!-- This is the configuration for the weblogic-maven-plugin -->
 						<groupId>com.oracle.weblogic</groupId>
@@ -112,13 +109,13 @@
 							<middlewareHome>C:\PRODUCTS\WLS1213</middlewareHome>
 						</configuration>
 						<executions>
-						   <!-- first undeploy, then deploy -->
-						   	<execution>
+							<!-- first undeploy, then deploy -->
+							<execution>
 								<id>wls-undeploy</id>
 								<phase>pre-integration-test</phase>
 								<goals>
-								 <goal>undeploy</goal>
-									<!--  <goal>redeploy</goal>-->
+									<goal>undeploy</goal>
+									<!-- <goal>redeploy</goal> -->
 								</goals>
 								<configuration>
 									<!--The admin URL where the app is deployed. Here use the plugin's 
@@ -133,19 +130,19 @@
 									<targets>AdminServer</targets>
 									<verbose>true</verbose>
 									<failOnError>false</failOnError>
-									<!--  <advanced>true</advanced>-->
+									<!-- <advanced>true</advanced> -->
 									<name>${project.build.finalName}</name>
 								</configuration>
 							</execution>
-						
+
 							<!-- Deploy the application to the WebLogic Server in the pre-integration-test 
 								phase -->
 							<execution>
 								<id>wls-deploy</id>
 								<phase>pre-integration-test</phase>
 								<goals>
-								 <goal>deploy</goal>
-									<!--  <goal>redeploy</goal>-->
+									<goal>deploy</goal>
+									<!-- <goal>redeploy</goal> -->
 								</goals>
 								<configuration>
 									<!--The admin URL where the app is deployed. Here use the plugin's 
@@ -159,26 +156,19 @@
 										the plugin's default value AdminServer -->
 									<targets>AdminServer</targets>
 									<verbose>true</verbose>
-									<!--  <advanced>true</advanced>-->
+									<!-- <advanced>true</advanced> -->
 									<name>${project.build.finalName}</name>
 								</configuration>
 							</execution>
 							<!-- Stop the application in the pre-integration-test phase -->
-							<!-- not doing currently, just manually testing app for the moment here -->
-							<!--  <execution>
-								<id>wls-stop-app</id>
-								<phase>post-integration-test</phase>
-								<goals>
-									<goal>stop-app</goal>
-								</goals>
-								<configuration>
-									<adminurl>t3://127.0.0.1:7001</adminurl>
-									<user>weblogic</user>
-									<password>${WLSPassword}</password>
-									<name>${project.build.finalName}</name>
-								</configuration>
-							</execution>
-						</executions>-->
+							<!-- not doing currently, just manually testing app for the moment 
+								here -->
+							<!-- <execution> <id>wls-stop-app</id> <phase>post-integration-test</phase> 
+								<goals> <goal>stop-app</goal> </goals> <configuration> <adminurl>t3://127.0.0.1:7001</adminurl> 
+								<user>weblogic</user> <password>${WLSPassword}</password> <name>${project.build.finalName}</name> 
+								</configuration> </execution> -->
+
+						</executions>
 					</plugin>
 				</plugins>
 			</build>
