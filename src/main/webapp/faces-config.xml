@@ -1,29 +1,28 @@
 <?xml version="1.0"?>
 <!-- created by tcleyman -->
 <faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
- <managed-bean>
- <!-- note here that this is a backing bean for JSF
-      It is maybe better to use CDI instead of backing beans
-      since any Pojo can be injected
-      With CDI JSF can directly invoke methods on EJBs
-  -->
-  <!-- TODO: cleanup and remove below -->
-  <managed-bean-name>mainPage</managed-bean-name>
-  <managed-bean-class>mybeans.mainPage</managed-bean-class>
-  <managed-bean-scope>session</managed-bean-scope>
- </managed-bean>
- 
- <application>
- <resource-bundle>
- <!-- no need to specify .properties, this references bakkerij.messages.properties file -->
- <base-name>bakkerij.messages</base-name>
- <var>msgs</var>
- <!-- this is the variable I can use in my pages -->
- </resource-bundle>
- 
- </application>
- <lifecycle>
- <phase-listener>myJSF.myPhase.MyPhaseListener</phase-listener>
- </lifecycle>
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+	<managed-bean>
+		<!-- note here that this is a backing bean for JSF It is maybe better to 
+			use CDI instead of backing beans since any Pojo can be injected With CDI 
+			JSF can directly invoke methods on EJBs -->
+		<!-- TODO: cleanup and remove below -->
+		<managed-bean-name>mainPage</managed-bean-name>
+		<managed-bean-class>mybeans.mainPage</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<application>
+		<resource-bundle>
+			<!-- no need to specify .properties, this references bakkerij.messages.properties 
+				file -->
+			<base-name>bakkerij.messages</base-name>
+			<var>msgs</var>
+			<!-- this is the variable I can use in my pages -->
+		</resource-bundle>
+
+	</application>
+	<!-- <lifecycle> <phase-listener>myJSF.myPhase.MyPhaseListener</phase-listener> 
+		</lifecycle> -->
 </faces-config>
