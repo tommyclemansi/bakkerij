@@ -8,9 +8,18 @@
       since any Pojo can be injected
       With CDI JSF can directly invoke methods on EJBs
   -->
+  <!-- TODO: cleanup and remove below -->
   <managed-bean-name>mainPage</managed-bean-name>
   <managed-bean-class>mybeans.mainPage</managed-bean-class>
   <managed-bean-scope>session</managed-bean-scope>
  </managed-bean>
- <application/>
+ 
+ <application>
+ <resource-bundle>
+ <!-- no need to specify .properties, this references bakkerij.messages.properties file -->
+ <base-name>bakkerij.messages</base-name>
+ <description>resource bundle I use for all my pages, for generic elements like title and so on</description>
+ <var>msgs</var><!-- this is the variable I can use in my pages -->
+ </resource-bundle>
+ </application>
 </faces-config>
