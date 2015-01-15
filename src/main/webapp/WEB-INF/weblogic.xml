@@ -9,8 +9,11 @@
         </wls:prefer-application-packages>
         <wls:prefer-application-resources>
             <!-- seems to be in richfaces-core-impl 
-            I don't find directly any other classes like sun.com, so using this one only: -->
+            I don't find directly any other classes like sun.com, so using this one only:
+            For richfaces this is set to org.richfaces.webapp.RichFacesServletsInitializer
+             -->
             <wls:resource-name>META-INF/services/javax.servlet.ServletContainerInitializer</wls:resource-name>
+            <wls:resource-name>META-INF/services/javax.enterprise.inject.spi.Extension</wls:resource-name>
         </wls:prefer-application-resources>
           
              
