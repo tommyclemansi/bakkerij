@@ -1,67 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>bakkerij</groupId>
-  <artifactId>bakkerij_parent</artifactId>
-  <version>1.0</version>
-  <packaging>pom</packaging>
-  <organization>
-    <name>tcleyman</name>
-  </organization>
-  <!-- attempt to have parent,child, will put my dependencies here -->
-  <modules>
-  <module>../</module>
-  </modules>
-  <dependencyManagement>
-  <dependencies>
-  <!-- restricting now to a minimum and I only need jboss spec for the moment (or jee 6.0) -->
-  
-  <!-- 4.1 is I think compatible with JSF 2--> 	
-	<dependency>
-			<groupId>org.richfaces</groupId>
-			<artifactId>richfaces-bom</artifactId>
-			<version>4.1.0.Final</version>
-			<type>pom</type>
-		</dependency>
-		
-  </dependencies>
-  </dependencyManagement>
-  <dependencies>
-  
-  <dependency>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>bakkerij</groupId>
+	<artifactId>bakkerij_parent</artifactId>
+	<version>1.0</version>
+	<packaging>pom</packaging>
+	<organization>
+		<name>tcleyman</name>
+	</organization>
+	<!-- attempt to have parent,child, will put my dependencies here -->
+	<modules>
+		<module>../</module>
+	</modules>
+	<dependencyManagement>
+		<dependencies>
+			<!-- restricting now to a minimum and I only need jboss spec for the moment 
+				(or jee 6.0) -->
+
+			<!-- 4.1 is I think compatible with JSF 2 -->
+			<dependency>
+				<groupId>org.richfaces</groupId>
+				<artifactId>richfaces-bom</artifactId>
+				<version>4.1.0.Final</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+
+			<dependency>
+				<groupId>org.jboss.bom</groupId>
+				<artifactId>jboss-javaee-6.0-with-richfaces</artifactId>
+				<version>1.0.7.Final</version>
+				<type>pom</type>
+
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+	<dependencies>
+
+		<dependency>
 			<groupId>org.jboss.spec</groupId>
 			<artifactId>jboss-javaee-6.0</artifactId>
 			<version>1.0.0.Final</version>
 			<type>pom</type>
 			<scope>provided</scope>
-  </dependency>
-  
-  <!--  
-	<dependency>
-		<groupId>org.jboss.bom</groupId>
-		<artifactId>jboss-javaee-6.0-with-richfaces</artifactId>
-		<version>1.0.7.Final</version>
-		<type>pom</type>
+		</dependency>
 
-	</dependency>-->
-	
 
-	
-	
-	      <dependency>
-        <groupId>org.richfaces.ui</groupId>
-        <artifactId>richfaces-components-ui</artifactId>
-    </dependency> 
-    
-    <dependency>
-        <groupId>org.richfaces.core</groupId>
-        <artifactId>richfaces-core-impl</artifactId>
-    </dependency> 
+		<dependency>
+			<groupId>org.richfaces.ui</groupId>
+			<artifactId>richfaces-components-ui</artifactId>
+		</dependency>
 
-	
-	
-<!-- need to have a dependency for junit, this means the surefire plugin will use junit -->   
+		<dependency>
+			<groupId>org.richfaces.core</groupId>
+			<artifactId>richfaces-core-impl</artifactId>
+		</dependency>
+
+
+
+		<!-- need to have a dependency for junit, this means the surefire plugin 
+			will use junit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -70,17 +71,9 @@
 		</dependency>
 	</dependencies>
 
-<!-- 
-others to try
- - obfuscator
- - also need to test CDI / EJB junit test
- - Apache Felix (bundle plugin): to create OSGI bundle out of maven project
- - WSO2 Carbon: 
- 
- 
- Plexus: this is inversion of control used by Maven
- (like Spring)
- -->
-		
-  
-  </project>
+	<!-- others to try - obfuscator - also need to test CDI / EJB junit test 
+		- Apache Felix (bundle plugin): to create OSGI bundle out of maven project 
+		- WSO2 Carbon: Plexus: this is inversion of control used by Maven (like Spring) -->
+
+
+</project>
