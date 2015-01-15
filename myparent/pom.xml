@@ -23,6 +23,15 @@
 			<scope>provided</scope>
   </dependency>
   
+	<dependency>
+		<groupId>org.jboss.bom</groupId>
+		<artifactId>jboss-javaee-6.0-with-richfaces</artifactId>
+		<version>1.0.7.Final</version>
+		<type>pom</type>
+
+		<scope>runtime</scope>
+	</dependency>
+	
 <!-- need to have a dependency for junit, this means the surefire plugin will use junit -->   
 		<dependency>
 			<groupId>junit</groupId>
