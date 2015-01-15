@@ -16,6 +16,19 @@
   <dependencyManagement>
   <dependencies>
   <!-- restricting now to a minimum and I only need jboss spec for the moment (or jee 6.0) -->
+  
+  <!-- 4.1 is I think compatible with JSF 2--> 	
+	<dependency>
+			<groupId>org.richfaces</groupId>
+			<artifactId>richfaces-bom</artifactId>
+			<version>4.1.0.Final</version>
+			<type>pom</type>
+		</dependency>
+		
+  </dependencies>
+  </dependencyManagement>
+  <dependencies>
+  
   <dependency>
 			<groupId>org.jboss.spec</groupId>
 			<artifactId>jboss-javaee-6.0</artifactId>
@@ -23,10 +36,6 @@
 			<type>pom</type>
 			<scope>provided</scope>
   </dependency>
-  
-  </dependencies>
-  </dependencyManagement>
-  <dependencies>
   
   <!--  
 	<dependency>
@@ -37,13 +46,7 @@
 
 	</dependency>-->
 	
-<!-- 4.1 is I think compatible with JSF 2--> 	
-	<dependency>
-			<groupId>org.richfaces</groupId>
-			<artifactId>richfaces-bom</artifactId>
-			<version>4.1.0.Final</version>
-			<type>pom</type>
-		</dependency>
+
 	
 	
 	      <dependency>
