@@ -24,8 +24,6 @@
  
  </application>
  <lifecycle>
- <phase-listener>
- myJSF.myPhase.myPhaseListener
- </phase-listener>
+ <phase-listener>myJSF.myPhase.MyPhaseListener</phase-listener>
  </lifecycle>
 </faces-config>
