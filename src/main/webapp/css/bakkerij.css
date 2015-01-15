@@ -25,3 +25,7 @@
 	min-width:160px;
 	max-width: 100%;
 }
+
+.errorMessage{
+	color: Red
+}

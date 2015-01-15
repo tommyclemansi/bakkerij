@@ -18,8 +18,8 @@
  <resource-bundle>
  <!-- no need to specify .properties, this references bakkerij.messages.properties file -->
  <base-name>bakkerij.messages</base-name>
- <description>resource bundle I use for all my pages, for generic elements like title and so on</description>
- <var>msgs</var><!-- this is the variable I can use in my pages -->
+ <var>msgs</var>
+ <!-- this is the variable I can use in my pages -->
  </resource-bundle>
  </application>
 </faces-config>
