@@ -21,5 +21,11 @@
  <var>msgs</var>
  <!-- this is the variable I can use in my pages -->
  </resource-bundle>
+ 
  </application>
+ <lifecycle>
+ <phase-listener>
+ myJSF.myPhase.myPhaseListener
+ </phase-listener>
+ </lifecycle>
 </faces-config>
