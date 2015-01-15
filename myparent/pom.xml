@@ -13,6 +13,7 @@
   <modules>
   <module>../</module>
   </modules>
+  <dependencyManagement>
   <dependencies>
   <!-- restricting now to a minimum and I only need jboss spec for the moment (or jee 6.0) -->
   <dependency>
@@ -22,6 +23,10 @@
 			<type>pom</type>
 			<scope>provided</scope>
   </dependency>
+  
+  </dependencies>
+  </dependencyManagement>
+  <dependencies>
   
   <!--  
 	<dependency>
