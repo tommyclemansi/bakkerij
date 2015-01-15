@@ -164,7 +164,8 @@
 								</configuration>
 							</execution>
 							<!-- Stop the application in the pre-integration-test phase -->
-							<execution>
+							<!-- not doing currently, just manually testing app for the moment here -->
+							<!--  <execution>
 								<id>wls-stop-app</id>
 								<phase>post-integration-test</phase>
 								<goals>
@@ -177,7 +178,7 @@
 									<name>${project.build.finalName}</name>
 								</configuration>
 							</execution>
-						</executions>
+						</executions>-->
 					</plugin>
 				</plugins>
 			</build>
