@@ -4,9 +4,10 @@
 <!-- on JBoss will use /, on WLS will use /bakkerij -->
 <wls:context-root>/bakkerij</wls:context-root>
     <wls:container-descriptor>
-        <wls:prefer-application-packages>
-     
-        </wls:prefer-application-packages>
+    <!--  wls cat advice -->
+<wls:prefer-application-packages>
+   <wls:package-name>com.google.common.*</wls:package-name>
+</wls:prefer-application-packages>
         <wls:prefer-application-resources>
             <!-- seems to be in richfaces-core-impl 
             I don't find directly any other classes like sun.com, so using this one only:
