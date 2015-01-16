@@ -41,10 +41,11 @@ public class myUploadServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+	testUpload(request,response);
 	}
 
-	private void testupload(HttpServletRequest request,
-			HttpServletResponse response) {
+	private void testUpload(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException 
+	{
 		Collection<Part> parts;
 		try {
 			parts = request.getParts();
