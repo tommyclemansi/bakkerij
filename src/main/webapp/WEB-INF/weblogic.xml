@@ -13,10 +13,24 @@
             I don't find directly any other classes like sun.com, so using this one only:
             For richfaces this is set to org.richfaces.webapp.RichFacesServletsInitializer
              -->
-            <wls:resource-name>META-INF/services/javax.servlet.ServletContainerInitializer</wls:resource-name>
+          <!--    <wls:resource-name>META-INF/services/javax.servlet.ServletContainerInitializer</wls:resource-name>-->
             <wls:resource-name>META-INF/services/javax.enterprise.inject.spi.Extension</wls:resource-name>
         </wls:prefer-application-resources>
-          
+ <!-- 
+ for my ref, wls has;
+ WLS1213/wlserver/modules/glassfish.jsf_2.0.0.0_2-1-20.ja
+ 
+ meta-inf/services/javax.servlet.ServletContainerInitializer
+ com.sun.faces.config.FacesInitializer
+ in the Jboss impl this is set to;
+ org.richfaces.webapp.RichFacesServletsInitializer
+ 
+ 
+ but also com.sun.faces.spi.injectionprovider to:
+ com.sun.faces.vendor.Tomcat6InjectionProvider:org.apache.catalina.util.DefaultAnnotationProcessor
+com.sun.faces.vendor.Jetty6InjectionProvider:org.mortbay.jetty.plus.annotation.InjectionCollection
+ 
+  -->         
              
     </wls:container-descriptor>
     
