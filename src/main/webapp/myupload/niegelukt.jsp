@@ -2,7 +2,6 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
-<!-- simple page to upload bakkerij fotoken -->
 <html>
     <head>
         <title>Bakkerij de Lukken - upload een Taart</title>
@@ -16,18 +15,14 @@
                 <link href="${pageContext.request.contextPath}/css/bakkerij.css" rel="stylesheet" type="text/css"/>
             </c:otherwise>
         </c:choose>
-    </head>
+
 
     <body>
         <div class="titlebar">
-            <h1>Upload File</h1>
+            <h1>Error</h1>
             <a class="titlebar-back" href="${pageContext.request.contextPath}/">Back</a>
         </div>
-        <form class="settings-form" action="upload.do" enctype="multipart/form-data" method="POST"> 
-            <input type="file" name="file1"><br>
-            <input type="Submit" value="Upload"><br>
-        </form>
-        
-  <!-- need to include footer jspf -->
+        <!-- error message is passed from the Servlet..  -->
+        <h2>${MyerrorMessage}</h2>
     </body>
 </html>
