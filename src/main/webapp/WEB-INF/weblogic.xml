@@ -31,7 +31,10 @@
 com.sun.faces.vendor.Jetty6InjectionProvider:org.mortbay.jetty.plus.annotation.InjectionCollection
  
   -->         
-             
+        
+        <!-- research
+        WLS 12c has JSF 2.1, Mojarra 2.1.5
+         -->     
     </wls:container-descriptor>
     
     <!-- 
