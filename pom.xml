@@ -65,18 +65,11 @@
 				folder. -->
 			<!-- http://maven.apache.org/guides/mini/guide-building-for-different-environments.html -->
 			<id>openshift</id>
-			<dependencies>
-		<!-- moved dependency to this part, due to the fact of incompatibility with WLS, need to find out the root cause of this -->
-		<dependency>
-			<groupId>org.richfaces.ui</groupId>
-			<artifactId>richfaces-components-ui</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.richfaces.core</groupId>
-			<artifactId>richfaces-core-impl</artifactId>
-		</dependency>
-			</dependencies>
+			<!-- moved dependency to this part, due to the fact of incompatibility 
+				with WLS, need to find out the root cause of this -->
+			<!-- <dependencies> <dependency> <groupId>org.richfaces.ui</groupId> <artifactId>richfaces-components-ui</artifactId> 
+				</dependency> <dependency> <groupId>org.richfaces.core</groupId> <artifactId>richfaces-core-impl</artifactId> 
+				</dependency> </dependencies> -->
 			<build>
 				<finalName>bakkerij</finalName>
 				<plugins>
@@ -95,7 +88,7 @@
 			<!-- use this profile for internal testing. -->
 			<!-- this to test internally -->
 			<!-- this is called from Hudson -->
-			
+
 			<id>tomsprofile</id>
 			<build>
 				<finalName>bakkerij</finalName>
