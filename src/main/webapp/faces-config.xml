@@ -23,6 +23,7 @@
 		</resource-bundle>
 
 	</application>
-	<!-- <lifecycle> <phase-listener>myJSF.myPhase.MyPhaseListener</phase-listener> 
-		</lifecycle> -->
+	<lifecycle> 
+	<phase-listener>myJSF.myPhase.MyPhaseListener</phase-listener> 
+		</lifecycle>
 </faces-config>

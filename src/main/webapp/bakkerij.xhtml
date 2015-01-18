@@ -39,9 +39,11 @@
 <!-- in the constructor of mainPageCDI I'm getting the FacesContext and getting useragent 
 with this we can check if a mobile browser is used-->
 <h:graphicImage styleClass="image-thumb" value="#{request.contextPath}/images/schoenen.JPG" />
-BrowserAgent: #{mainPageCDI.userAgent}<br/>
-       
-       <!-- best user OGV for firefox, use MP4 for all others -->
+BrowserAgent: #{mainPageCDI.userAgent}<br/><br/>
+hotkey for debug:
+	<ui:debug hotkey="k" rendered="true"></ui:debug>
+
+	<!-- best user OGV for firefox, use MP4 for all others -->
        <!--   <h:panelGroup rendered="#{bean.type == 'OGV_VIDEO'}">
             <video class="video-large" controls="controls" autoplay="autoplay">
                 <source type="video/ogg" src="#{request.contextPath}/#{mediaItemBean.mediaItem.id}" />
